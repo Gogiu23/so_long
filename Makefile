@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 12:09:31 by gdominic          #+#    #+#              #
-#    Updated: 2022/11/14 16:04:49 by gdominic         ###   ########.fr        #
+#    Updated: 2022/11/15 12:51:13 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-BLACK		=\034[0;30m
+BLACK		=   \034[0;30m
 RED	 		=	\033[0;31m
 GREEN		=	\033[0;32m
 ORANGE		=	\033[0;33m
@@ -43,13 +43,15 @@ NAME			= so_long
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-MAKE_LIB		= libft.a
+MAKE_LIB		= libft/libft.a
+MAKE_MLX		= mlx/libmlx.a
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror -g -MMD
+X_FLAGS			= -Lmlx -lmlx -framework OpenGL -framework AppKit
 RM				= rm -rf
 MKFL			= Makefile
 MD				= mkdir -p
-LIB_DIR			= ./libft
+LIB_DIR			= ./libft/includes/
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
@@ -59,16 +61,17 @@ OBJS			=$(SOURCES:.c=.o)
 DEPS			=$(SOURCES:.c=.d)
 
 all:
+	$(MAKE) -C mlx
 	$(MAKE) -C libft
 	@$(MAKE) $(NAME)
 
-%.o:	%.c $(MKFL) $(MAKE_LIB)
+%.o:	%.c $(MKFL) $(MAKE_LIB) $(MAKE_MLX)
 	@printf "\r\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)		\r"
 	@$(CC) $(CFLAGS) -I $(INCLUDE_PATH_BONUS) -I $(INCLUDE_PATH) -I $(LIB_DIR) -c $< -o $@
 	@printf "\r\033[2K\r$(YELLOW)Done......✅ $(LIGHT_BLUE)$<$(RESET)		\n"
 	
 $(NAME):: $(MAKE_LIB) $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $(X_FLAGS) $^ -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Compiled and ready![√]$(RESET)\n"
 
@@ -108,6 +111,7 @@ gmk_bonus:
 
 clean:
 	@make fclean -C libft
+	@make clean -C mlx
 	@$(RM) $(OBJS) $(OBJS_BONUS)
 	@$(RM) $(DEPS)
 	@$(RM) $(DEPS_BONUS)
