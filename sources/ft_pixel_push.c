@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_pixel_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/19 06:10:25 by gdominic         ###   ########.fr       */
+/*   Created: 2022/11/19 05:53:13 by gdominic          #+#    #+#             */
+/*   Updated: 2022/11/19 06:08:18 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,10 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-int	main(void)
+void	ft_pixel_push(t_data *data, int x, int y, int color)
 {
-	void	*mlx;
-	void 	*mlx_win;
-	t_data 	img;
-	int		x = 5;
+	char	*width;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1240, 720, "Hello world");
-	img.img = mlx_new_image(mlx, 1240, 720);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-	while (x < 100)
-	{
-		my_mlx_pixel_put(&img, x, 5, 0x00FF0001);
-		x++;
-	}
-	while (x < 100)
-	{
-		mlx_put_image_to_window(mlx, mlx_win, img.img, x, 0);
-		x++;
-	}
-	mlx_loop(mlx);
+	width = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int *)width = color;
 }
