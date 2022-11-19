@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/17 16:02:35 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/19 22:37:08 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@
 # include <unistd.h>
 
 typedef struct	s_data {
-	
+	void	*mlx;
 	void	*img;
+	void	*win;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	int		x;
 }	t_data;
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	ft_pixel_push(t_data *data, int x, int y, int color);
 
 #endif
