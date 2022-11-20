@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/19 22:37:08 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:46:18 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ typedef struct	s_data {
 	int		line_length;
 	int		endian;
 	int		x;
+	int		y;
 }	t_data;
 
 void	ft_pixel_push(t_data *data, int x, int y, int color);
+int		loop_hook(t_data *data);
+void	ft_square(t_data *data);
+void	ft_triangle(t_data *data);
 
 #endif

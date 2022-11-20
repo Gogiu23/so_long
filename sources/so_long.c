@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/19 22:45:40 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/20 21:10:46 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,42 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-int	loop_hook(t_data *data)
+//int	main(int argc, char **argv)
+//{
+//	t_data 	data;
+//
+//	if (argc == 0)
+//		return (0);
+//	data.x = 5;
+//	data.y = 5;
+//	data.mlx = mlx_init();
+//	data.win = mlx_new_window(data.mlx, 1240, 720, "Hello world");
+//	data.img = mlx_new_image(data.mlx, 1240, 720);
+//	data.addr = mlx_get_data_addr(data.img, &data.bits_per_pixel, &data.line_length, &data.endian);
+//	if (ft_strncmp(argv[1], "square", 8) == 0)
+//		ft_square(&data);
+//	if (ft_strncmp(argv[1], "triangle", 8) == 0)
+//		ft_triangle(&data);
+//	return (0);
+//}
+
+typedef struct	s_vars {
+	void	*mlx;
+	void	*win;
+}t_vars;
+
+int	close(int keycode, t_vars *vars)
 {
-	if (data->x < 100)
-	{
-	ft_pixel_push(data, data->x, 5, 0x00FF0001);
-	mlx_put_image_to_window(data->mlx, data->win, data->img, data->x, 0);
-	data->x++;
-	usleep(50000);
-	}
+	mlx_destroy_window(vars->mlx, vars->win);
 	return (0);
 }
 
 int	main(void)
 {
-	t_data 	data;
-//	int		x = 5;
+	t_vars	vars;
 
-	data.x = 0;
-	data.mlx = mlx_init();
-	data.win = mlx_new_window(data.mlx, 1240, 720, "Hello world");
-	data.img = mlx_new_image(data.mlx, 1240, 720);
-	data.addr = mlx_get_data_addr(data.img, &data.bits_per_pixel, &data.line_length, &data.endian);
-//	while (x < 100)
-//	{
-//		ft_pixel_push(&img, x, 5, 0x00FF0001);
-		mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
-//		x++;
-//		sleep(1);
-//	}
-//	while (x < 100)
-//	{
-//		mlx_put_image_to_window(mlx, mlx_win, img.img, x, 0);
-//		x++;
-//	}
-	mlx_loop_hook(data.mlx, loop_hook, &data);
-	mlx_loop(data.mlx);
+	vars.mlx = mlx_init();
+	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
+	mlx_hook(vars.win, 2, 1L<<0, close, &vars);
+	mlx_loop(vars.mlx);
 }

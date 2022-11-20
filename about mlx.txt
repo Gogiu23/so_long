@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 06:09:32 by gdominic          #+#    #+#              #
-#    Updated: 2022/11/19 06:11:21 by gdominic         ###   ########.fr        #
+#    Updated: 2022/11/20 21:10:46 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ int	main(void)
 	img = mlx_new_image(mlx, 1240, 720);  // create a new image
 }
 
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 typedef struct	s_data {
 	
 	void	*img;
@@ -50,4 +52,8 @@ int	main(void)
 
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 }
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+HOOKING
+powerful tool from the mlx that is achieved from the follow function:
 
+void	mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*f)(), void *param)
