@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_map_handler.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
+/*   Created: 2022/11/22 18:45:35 by gdominic          #+#    #+#             */
 /*   Updated: 2022/11/22 18:50:32 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "../includes/so_long.h"
+#include "../libft/includes/libft.h"
+#include "../mlx/mlx.h"
 
-# include <unistd.h>
+char	ft_get_map(char **argv)
+{
+	char	line;
 
-typedef struct	s_data {
-	void	*mlx;
-	void	*img;
-	void	*win;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-	int		x;
-	int		y;
-}	t_data;
-
-void	ft_pixel_push(t_data *data, int x, int y, int color);
-int		loop_hook(t_data *data);
-void	ft_square(t_data *data);
-void	ft_triangle(t_data *data);
-char	ft_get_map(char **argv);
-
-#endif
+	line = *get_next_line(ft_atoi_plus(argv[2]));
+	return (line);
+}
