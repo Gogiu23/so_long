@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/22 18:50:58 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:41:50 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	main(int argc, char **argv)
 	t_data 	data;
 	char	map;
 
-	map = ft_get_map(&argv[2]);
+	ft_printf("%s\n", argv[1]);
+	map = ft_get_map(&argv[1]);
 
 	if (argc == 0)
 		return (0);
