@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/24 17:41:50 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:01:27 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,23 @@
 int	main(int argc, char **argv)
 {
 	t_data 	data;
-	char	map;
+	int		fd;
+//	int		i;
+	char	*map;
 
-	ft_printf("%s\n", argv[1]);
-	map = ft_get_map(&argv[1]);
-
-	if (argc == 0)
+//	i = 0;
+	if (argc == 1)
 		return (0);
+	fd = open(argv[1], O_RDONLY);
+	map = get_next_line(fd);
+	while (map)
+	{
+		ft_printf("%s\n", map);
+		map = get_next_line(fd);
+//		i++;
+	}
+//	ft_printf("%d\n", map);
+//	ft_printf("%s\n", map);
 	data.x = 5;
 	data.y = 5;
 	data.mlx = mlx_init();
@@ -34,6 +44,7 @@ int	main(int argc, char **argv)
 		ft_square(&data);
 	if (ft_strncmp(argv[1], "triangle", 8) == 0)
 		ft_triangle(&data);
+	close(fd);
 	return (0);
 }
 
