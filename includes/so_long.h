@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/28 16:58:48 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/29 04:59:18 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct	s_data {
 	void	*img;
 	void	*win;
 	char	*addr;
+	char	**matrix;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;

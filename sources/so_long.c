@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/28 20:01:27 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/29 06:26:25 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,24 @@
 int	main(int argc, char **argv)
 {
 	t_data 	data;
+//	t_data	text;
 	int		fd;
-//	int		i;
 	char	*map;
 
-//	i = 0;
 	if (argc == 1)
 		return (0);
 	fd = open(argv[1], O_RDONLY);
 	map = get_next_line(fd);
 	while (map)
 	{
+//		text.matrix = (char **)malloc(sizeof(char *) * sizeof(map));
 		ft_printf("%s\n", map);
+		ft_printf("tamaño de el get next line: %d\n", sizeof(get_next_line(fd)));
 		map = get_next_line(fd);
-//		i++;
+//		text.matrix[0][0] = *map;
 	}
-//	ft_printf("%d\n", map);
-//	ft_printf("%s\n", map);
+	ft_printf("tamaño de argv: %d\n", sizeof(argv[1]));
+//	ft_printf("%s\n", text.matrix[0]);
 	data.x = 5;
 	data.y = 5;
 	data.mlx = mlx_init();
