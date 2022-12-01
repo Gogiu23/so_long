@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fitoar.c                                        :+:      :+:    :+:   */
+/*   ft_print_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 20:12:02 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/01 21:03:36 by gdominic         ###   ########.fr       */
+/*   Created: 2022/12/01 20:55:37 by gdominic          #+#    #+#             */
+/*   Updated: 2022/12/01 20:59:25 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,15 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-void	ft_fitoar(t_data *t, int fd)
+void	ft_print_stack(t_data *t)
 {
-	char	*map;
-	int		i;
-	int		nbr;
+	int	i;
 
-	nbr = 0;
 	i = 0;
-	map = get_next_line(fd);
-	t->matrix = (char **)malloc(sizeof(char *));
-	if (!t->matrix)
-		exit (0);
-	while (map)
+	while (t->matrix[i])
 	{
-		nbr = 0;
-		t->matrix[i] = (char *)malloc(sizeof(char) * ft_strlen(map) + 1);
-		while (map[nbr])
-		{
-			t->matrix[i][nbr] = map[nbr];
-			nbr++;
-		}
-		t->matrix[i][nbr + 1] = '\0';
-		free(map);
-		map = get_next_line(fd);
+		ft_printf("array t->marrix[%d]: %s\n", i, t->matrix[i]);
 		i++;
 	}
-	t->matrix[i] = NULL;
+	ft_printf("Prueba de array: %c\n", t->matrix[2][9]);
 }

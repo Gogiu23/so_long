@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 06:09:32 by gdominic          #+#    #+#              #
-#    Updated: 2022/11/20 21:10:46 by gdominic         ###   ########.fr        #
+#    Updated: 2022/12/01 21:49:18 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,3 +57,55 @@ HOOKING
 powerful tool from the mlx that is achieved from the follow function:
 
 void	mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*f)(), void *param)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+int	close2(int keycode, t_vars *vars)
+{
+	if (keycode == 53)
+	vars = 0;
+	if (keycode == 53)
+		ft_printf("Hola\n");
+	return (0);
+}
+
+int	main(void)
+{
+	t_vars	vars;
+
+	vars.mlx = mlx_init();
+	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
+	mlx_hook(vars.win, 12, 0, close2, &vars);
+	mlx_loop(vars.mlx);
+}
+
+INTRODUCCION
+Hooking is used for many purposes, including debugging and extending funcionality, as intercepting keyboardaor moyuse event
+messages before they reach an application. 
+It also been used in benchmarking programs, as measure frame rate in 3D games, where the oputput and the input is done through 
+hooking.
+EXAMPLE
+
+#include <mlx.h>
+#include <stdio.h>
+
+typedef struct s_vars {
+	void	*mlx;
+	void	*win;
+}	t_vars;
+
+int	key_hook(int keycode, t_vars *vars)
+{
+	printf("Hello from key_hook");
+	return (0);
+}
+
+int	main(void)
+{
+	t_vars	vars;
+
+	vars.mlx = mlx_init();
+	vars.win = mlx_new_window(vars.mlx, 640, 480, "Hello world");
+	mlx_key_hook(vars.win, key_hook, &vars);
+	mlx_loop(vars.mlx);
+}

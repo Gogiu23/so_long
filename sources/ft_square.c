@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 17:15:10 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/20 20:20:33 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/01 21:03:05 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,30 +27,6 @@ void	ft_square(t_data *data)
 		}
 		data->x++;
 	}
-//	while (data->x < 100)
-//	{
-//		ft_pixel_push(data, data->x, data->y, 0x00FF00000);
-//		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
-//		data->x++;
-//	}
-//	while (data->y < 100)
-//	{
-//		ft_pixel_push(data, data->x, data->y, 0x00FF00000);
-//		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
-//		data->y++;
-//	}
-//	while (data->x > 5)
-//	{
-//		ft_pixel_push(data, data->x, data->y, 0x00FF00000);
-//		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
-//		data->x--;
-//	}
-//	while (data->y > 5)
-//	{
-//		ft_pixel_push(data, data->x, data->y, 0x00FF00000);
-//		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
-//		data->y--;
-//	}
 	mlx_loop(data->mlx);
 }
 

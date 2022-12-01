@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/01 02:39:16 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/01 21:05:54 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 
-typedef struct	s_data {
+typedef struct s_data {
 	void	*mlx;
 	void	*img;
 	void	*win;
@@ -37,5 +37,6 @@ void	ft_triangle(t_data *data);
 char	ft_get_map(char **argv);
 void	ft_fitoar(t_data *t, int fd);
 void	ft_free_stacks_t(t_data *t);
+void	ft_print_stack(t_data *t);
 
 #endif
