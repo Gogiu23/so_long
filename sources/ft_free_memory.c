@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fitoar.c                                        :+:      :+:    :+:   */
+/*   ft_free_memory.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 20:12:02 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/01 02:35:58 by gdominic         ###   ########.fr       */
+/*   Created: 2022/12/01 02:21:33 by gdominic          #+#    #+#             */
+/*   Updated: 2022/12/01 02:23:26 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,15 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-void	ft_fitoar(t_data *t, int fd)
+void	ft_free_stacks_t(t_data *t)
 {
-	char	*map;
-	int		i;
+	int	nbr;
 
-	i = 0;
-	map = get_next_line(fd);
-	t->matrix = (char **)malloc(sizeof(char *));
-	if(!t->matrix)
-		free(t->matrix);
-	while (map)
+	nbr = 0;
+	while (t->matrix[nbr])
 	{
-		t->matrix[i] = (char *)malloc(sizeof(char) * ft_strlen(map) + 1);
-		t->matrix[i] = map;
-//		free(map);
-		map = get_next_line(fd);
-		i++;
+		free(t->matrix[nbr]);
+		nbr++;
 	}
-	t->matrix[i] = NULL;
-	map = NULL;
-//	free(map);
+	free(t->matrix);
 }

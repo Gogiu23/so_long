@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/30 20:12:54 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/01 02:39:16 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int		loop_hook(t_data *data);
 void	ft_square(t_data *data);
 void	ft_triangle(t_data *data);
 char	ft_get_map(char **argv);
+void	ft_fitoar(t_data *t, int fd);
+void	ft_free_stacks_t(t_data *t);
 
 #endif
