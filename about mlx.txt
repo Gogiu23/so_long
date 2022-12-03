@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 06:09:32 by gdominic          #+#    #+#              #
-#    Updated: 2022/12/01 21:49:18 by gdominic         ###   ########.fr        #
+#    Updated: 2022/12/03 12:48:55 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,3 +109,22 @@ int	main(void)
 	mlx_key_hook(vars.win, key_hook, &vars);
 	mlx_loop(vars.mlx);
 }
+
+[ ABOUT IMAGES ]
+we can use both parameters as PNG or XPM in order to import images to our window.
+The function we should use it is this:
+
+ 		#include <mlx.h>
+
+		int	main(void)
+		{		
+ 		   void	*mlx;
+ 		   void	*img;
+ 		   char	*relative_path = "./test.xpm";
+ 		   int		img_width;
+ 		   int		img_height;
+
+ 		   mlx = mlx_init();
+ 		   img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
+		}		
+
