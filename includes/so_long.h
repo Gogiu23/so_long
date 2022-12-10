@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/09 06:04:51 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/10 03:14:06 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ void	ft_free_stacks_t(t_data *t);
 void	ft_start_game(t_data *data);
 int		ft_close_game(int keycode, t_data *data);
 void	ft_print_stack(t_data *t);
+int		ft_next_game(int keycode, t_data *data);
 
 #endif
