@@ -127,11 +127,15 @@ ft_atoi_plus	libft/sources/converts/ft_atoi_plus.c	/^long	ft_atoi_plus(const cha
 ft_bzero	libft/sources/mem_edit/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
 ft_calloc	libft/sources/mem_edit/ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/;"	f
 ft_check_arg_atoi	libft/sources/converts/ft_atoi_plus.c	/^void	ft_check_arg_atoi(const char *str, int i)$/;"	f
+ft_close_game	sources/map.c	/^int	ft_close_game(int keycode, t_data *data)$/;"	f
 ft_convertx	libft/sources/converts/ft_convertx.c	/^int	ft_convertx(unsigned int num, int base, int mode)$/;"	f
 ft_countnbr	libft/sources/converts/ft_itoa.c	/^static	int	ft_countnbr(int n)$/;"	f	file:
 ft_doitoa	libft/sources/converts/ft_itoa.c	/^static	char	*ft_doitoa(int n, char *dest, int counter)$/;"	f	file:
 ft_domall	libft/sources/strings/ft_split.c	/^static char	**ft_domall(char *s, char c, char **dest)$/;"	f	file:
+ft_fitoar	sources/ft_fitoar.c	/^void	ft_fitoar(t_data *t, int fd)$/;"	f
 ft_free	libft/sources/strings/ft_split.c	/^static char	*ft_free(char *dest, char **supdest, int g)$/;"	f	file:
+ft_free_stacks_t	sources/ft_free_memory.c	/^void	ft_free_stacks_t(t_data *t)$/;"	f
+ft_get_map	sources/ft_map_handler.c	/^char	ft_get_map(char **argv)$/;"	f
 ft_getlines	libft/sources/lines/get_next_line_bonus.c	/^char	*ft_getlines(char *ptr)$/;"	f
 ft_isalnum	libft/sources/checks/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
 ft_isalpha	libft/sources/checks/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f
@@ -154,7 +158,9 @@ ft_memcpy	libft/sources/mem_edit/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const 
 ft_memmove	libft/sources/mem_edit/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
 ft_memset	libft/sources/mem_edit/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
 ft_newptr	libft/sources/lines/get_next_line_bonus.c	/^char	*ft_newptr(char *ptr)$/;"	f
+ft_next_game	sources/map.c	/^int	ft_next_game(int keycode, t_data *data)$/;"	f
 ft_pixel_push	sources/ft_pixel_push.c	/^void	ft_pixel_push(t_data *data, int x, int y, int color)$/;"	f
+ft_print_stack	sources/ft_print_stack.c	/^void	ft_print_stack(t_data *t)$/;"	f
 ft_printf	libft/sources/printf/ft_printf.c	/^int	ft_printf(char const *src, ...)$/;"	f
 ft_ptr	libft/sources/converts/ft_ptr.c	/^int	ft_ptr(unsigned long long strike, int nextbase)$/;"	f
 ft_putchar	libft/sources/puts/ft_putchar.c	/^int	ft_putchar(const char c)$/;"	f
@@ -172,6 +178,8 @@ ft_realconvert	libft/sources/converts/ft_convertx.c	/^static int	ft_realconvert(
 ft_realptr	libft/sources/converts/ft_ptr.c	/^static int	ft_realptr(char *newbuff, int i)$/;"	f	file:
 ft_split	libft/sources/strings/ft_split.c	/^char	**ft_split(char *s, char c)$/;"	f
 ft_splitter	libft/sources/printf/ft_printf.c	/^static	int	ft_splitter(char const *src, va_list ptr)$/;"	f	file:
+ft_square	sources/ft_square.c	/^void	ft_square(t_data *data)$/;"	f
+ft_start_game	sources/map.c	/^void	ft_start_game(t_data *data)$/;"	f
 ft_strchr	libft/sources/lines/get_next_line_utils_bonus.c	/^char	*ft_strchr(char *ptr, int n)$/;"	f
 ft_strchr	libft/sources/strings/ft_strchr.c	/^char	*ft_strchr(char *ptr, int n)$/;"	f
 ft_strdup	libft/sources/strings/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f
@@ -190,6 +198,7 @@ ft_substr	libft/sources/lines/get_next_line_utils_bonus.c	/^char	*ft_substr(char
 ft_substr	libft/sources/strings/ft_substr.c	/^char	*ft_substr(char *s, unsigned int start, unsigned int len)$/;"	f
 ft_tolower	libft/sources/converts/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
 ft_toupper	libft/sources/converts/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
+ft_triangle	sources/ft_square.c	/^void	ft_triangle(t_data *data)$/;"	f
 func_t	mlx/mlx_int.h	/^typedef int (*func_t)();$/;"	t
 get_next_line	libft/sources/lines/get_next_line_bonus.c	/^char	*get_next_line(int fd)$/;"	f
 glsl_info_s	mlx/mlx_int.h	/^typedef struct	glsl_info_s$/;"	s
@@ -202,8 +211,11 @@ image_program	mlx/mlx_int.h	/^  GLuint	image_program;$/;"	m	struct:glsl_info_s
 image_vshader	mlx/mlx_int.h	/^  GLuint	image_vshader;$/;"	m	struct:glsl_info_s
 img	includes/so_long.h	/^	void	*img;$/;"	m	struct:s_data
 img	mlx/mlx_int.h	/^  mlx_img_list_t	*img;$/;"	m	struct:mlx_img_ctx_s
+img2	includes/so_long.h	/^	void	*img2;$/;"	m	struct:s_data
+img_height	includes/so_long.h	/^	int		img_height;$/;"	m	struct:s_data
 img_list	mlx/mlx_int.h	/^  mlx_img_ctx_t		*img_list;$/;"	m	struct:mlx_win_list_s
 img_list	mlx/mlx_int.h	/^  mlx_img_list_t	*img_list;$/;"	m	struct:mlx_ptr_s
+img_width	includes/so_long.h	/^	int		img_width;$/;"	m	struct:s_data
 interlace	mlx/mlx_png.c	/^  int		interlace;$/;"	m	struct:png_info_s	file:
 line_length	includes/so_long.h	/^	int		line_length;$/;"	m	struct:s_data
 loc_font_atlassize	mlx/mlx_int.h	/^  GLint		loc_font_atlassize;$/;"	m	struct:glsl_info_s
@@ -222,12 +234,12 @@ loc_pixel_position	mlx/mlx_int.h	/^  GLint		loc_pixel_position;$/;"	m	struct:gls
 loc_pixel_texture	mlx/mlx_int.h	/^  GLint		loc_pixel_texture;$/;"	m	struct:glsl_info_s
 loc_pixel_winhalfsize	mlx/mlx_int.h	/^  GLint		loc_pixel_winhalfsize;$/;"	m	struct:glsl_info_s
 loop_hook	mlx/mlx_int.h	/^  void			(*loop_hook)(void *);$/;"	m	struct:mlx_ptr_s
-loop_hook	sources/so_long.c	/^int	loop_hook(t_data *data)$/;"	f
 loop_hook_data	mlx/mlx_int.h	/^  void			*loop_hook_data;$/;"	m	struct:mlx_ptr_s
 loop_timer	mlx/mlx_int.h	/^  void			*loop_timer;$/;"	m	struct:mlx_ptr_s
 magic	mlx/mlx_png.c	/^unsigned char magic[PNG_MAGIC_SIZE] = {137, 80, 78, 71, 13, 10, 26, 10};$/;"	v
-main	sources/so_long.c	/^int	main(void)$/;"	f
+main	sources/so_long.c	/^int	main()$/;"	f
 main_loop_active	mlx/mlx_int.h	/^  int			main_loop_active;$/;"	m	struct:mlx_ptr_s
+matrix	includes/so_long.h	/^	char	**matrix;$/;"	m	struct:s_data
 mipng_crc	mlx/mlx_png.c	/^int	mipng_crc(unsigned char *ptr, int len)$/;"	f
 mipng_data	mlx/mlx_png.c	/^int	mipng_data(mlx_img_list_t *img, unsigned char *dat, png_info_t *pi)$/;"	f
 mipng_defilter	mlx/mlx_png.c	/^unsigned char (*(mipng_defilter[]))(unsigned char *buff, int pos, int a, int b, int c) =$/;"	v
@@ -277,6 +289,8 @@ next	libft/includes/libft_list.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typ
 next	mlx/mlx_int.h	/^  struct mlx_img_ctx_s	*next;$/;"	m	struct:mlx_img_ctx_s	typeref:struct:mlx_img_ctx_s::mlx_img_ctx_s
 next	mlx/mlx_int.h	/^  struct mlx_img_list_s	*next;$/;"	m	struct:mlx_img_list_s	typeref:struct:mlx_img_list_s::mlx_img_list_s
 next	mlx/mlx_int.h	/^  struct mlx_win_list_s	*next;$/;"	m	struct:mlx_win_list_s	typeref:struct:mlx_win_list_s::mlx_win_list_s
+pic	includes/so_long.h	/^	char	*pic;$/;"	m	struct:s_data
+pic2	includes/so_long.h	/^	char	*pic2;$/;"	m	struct:s_data
 pixel_data	mlx/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anon1	file:
 pixel_fshader	mlx/mlx_int.h	/^  GLuint	pixel_fshader;$/;"	m	struct:glsl_info_s
 pixel_program	mlx/mlx_int.h	/^  GLuint	pixel_program;$/;"	m	struct:glsl_info_s
@@ -285,7 +299,7 @@ pixmgt	mlx/mlx_int.h	/^  int			pixmgt;$/;"	m	struct:mlx_win_list_s
 png_info_s	mlx/mlx_png.c	/^typedef struct png_info_s$/;"	s	file:
 png_info_t	mlx/mlx_png.c	/^} png_info_t;$/;"	t	typeref:struct:png_info_s	file:
 s_col_name	mlx/mlx_xpm.c	/^struct  s_col_name$/;"	s	file:
-s_data	includes/so_long.h	/^typedef struct	s_data {$/;"	s
+s_data	includes/so_long.h	/^typedef struct s_data {$/;"	s
 s_list	libft/includes/libft_list.h	/^typedef struct s_list$/;"	s
 s_xpm_col	mlx/mlx_xpm.c	/^typedef struct  s_xpm_col$/;"	s	file:
 src_lenght	libft/sources/strings/ft_strlcpy.c	/^static size_t	src_lenght(const char *src)$/;"	f	file:

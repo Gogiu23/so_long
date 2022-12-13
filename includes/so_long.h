@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/10 03:14:06 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/13 06:20:12 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@
 typedef struct s_data {
 	void	*mlx;
 	void	*img;
+	void	*img2;
 	void	*win;
 	char	*addr;
 	char	**matrix;
 	char	*pic;
+	char	*pic2;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
@@ -32,6 +34,7 @@ typedef struct s_data {
 	int		img_width;
 	int		img_height;
 }	t_data;
+	
 
 void	ft_pixel_push(t_data *data, int x, int y, int color);
 int		loop_hook(t_data *data);
