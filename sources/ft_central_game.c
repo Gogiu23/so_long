@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_memory.c                                   :+:      :+:    :+:   */
+/*   ft_central_game.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 02:21:33 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/16 18:19:43 by gdominic         ###   ########.fr       */
+/*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
+/*   Updated: 2022/12/16 19:11:19 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,7 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-void	ft_free_stacks_t(t_data *t)
+void	ft_after_loading(t_data *data)
 {
-	int	nbr;
-
-	nbr = 0;
-	if (t->matrix)
-	{
-		while (t->matrix[nbr])
-		{
-			free(t->matrix[nbr]);
-			nbr++;
-		}
-		free(t->matrix);
-	}
+	mlx_clear_window(data->mlx, data->win);
 }

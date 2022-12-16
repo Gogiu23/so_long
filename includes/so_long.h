@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/16 04:38:49 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:15:55 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ typedef struct s_data {
 	int		y;
 	int		img_width;
 	int		img_height;
+	int		time;
+	int		step;
 	t_img	*imgs;
 }	t_data;
 	
@@ -56,11 +58,17 @@ void	ft_get_size_map(t_data *data, int fd, char **argv);
 void	ft_check_errors(t_data *data);
 void	ft_check_size_map(t_data *data);
 
+// Function create doble array in order to store the map //
 void	ft_fitoar(t_data *t, int fd);
 void	ft_free_stacks_t(t_data *t);
+
+// Function start the game //
 void	ft_start_game(t_data *data);
-int		ft_close_game(int keycode, t_data *data);
 void	ft_print_stack(t_data *t);
 int		ft_next_game(int keycode, t_data *data);
+void	ft_after_loading(t_data *data);
+
+
+int		ft_wait_time(t_data *data);
 
 #endif

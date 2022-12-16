@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 20:12:02 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/16 04:11:02 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:13:17 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	ft_fitoar(t_data *data, int fd)
 		data->map = get_next_line(fd);
 		i++;
 	}
-data->matrix[i] = NULL;
+	data->matrix[i] = NULL;
+	close(fd);
 }

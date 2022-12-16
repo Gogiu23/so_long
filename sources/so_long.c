@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/16 04:27:22 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:39:02 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	t_data	data;
 	int		fd;
 
+	data.step = 0;
 	if (argc == 1)
 		return (0);
 	fd = open(argv[1], O_RDONLY);
@@ -29,8 +30,7 @@ int	main(int argc, char **argv)
 	data.mlx = mlx_init();
 	ft_start_game(&data);
 	mlx_hook(data.win, 2, 0, ft_next_game, &data);
+	mlx_loop_hook(data.mlx, ft_wait_time, &data);
 	mlx_loop(data.mlx);
-	close(fd);
-	ft_free_stacks_t(&data);
 	return (0);
 }
