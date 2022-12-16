@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 20:12:02 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/03 12:39:43 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/16 04:11:02 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-void	ft_fitoar(t_data *t, int fd)
+void	ft_fitoar(t_data *data, int fd)
 {
-	char	*map;
 	int		i;
 	int		nbr;
 
 	nbr = 0;
 	i = 0;
-	map = get_next_line(fd);
-	t->matrix = (char **)malloc(sizeof(char *));
-	if (!t->matrix)
+	data->map = get_next_line(fd);
+	data->matrix = (char **)malloc(sizeof(char *) * data->map_size - 1);
+	ft_printf("mapa size: %d\n", data->map_size);
+	if (!data->matrix)
 		exit (0);
-	while (map)
+	while (data->map)
 	{
 		nbr = 0;
-		t->matrix[i] = (char *)malloc(sizeof(char) * ft_strlen(map) + 1);
-		while (map[nbr])
+		data->matrix[i] = (char *)malloc(sizeof(char) * ft_strlen(data->map));
+		while (data->map[nbr])
 		{
-			t->matrix[i][nbr] = map[nbr];
+			data->matrix[i][nbr] = data->map[nbr];
 			nbr++;
 		}
-		t->matrix[i][nbr + 1] = '\0';
-		free(map);
-		map = get_next_line(fd);
+		data->matrix[i][nbr] = '\0';
+		free(data->map);
+		data->map = get_next_line(fd);
 		i++;
 	}
-	t->matrix[i] = NULL;
+data->matrix[i] = NULL;
 }

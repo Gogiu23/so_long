@@ -1,3 +1,4 @@
+SOURCES += sources/ft_check_errors.c
 SOURCES += sources/ft_square.c
 SOURCES += sources/ft_pixel_push.c
 SOURCES += sources/ft_map_handler.c

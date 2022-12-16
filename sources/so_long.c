@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/13 04:51:26 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/16 04:27:22 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-//int	main(int argc, char **argv)
-int	main()
+int	main(int argc, char **argv)
 {
 	t_data	data;
-	data.mlx = mlx_init();
-//	t_data	t;
-//	int		fd;
+	int		fd;
 
-//	if (argc == 1)
-//		return (0);
-//	fd = open(argv[1], O_RDONLY);
-//	ft_fitoar(&t, fd);
-//	ft_print_stack(&t);
+	if (argc == 1)
+		return (0);
+	fd = open(argv[1], O_RDONLY);
+	ft_get_size_map(&data, fd, argv);
+	ft_fitoar(&data, fd);
+	ft_print_stack(&data);
+	ft_check_errors(&data);
+	data.mlx = mlx_init();
 	ft_start_game(&data);
-//	close(fd);
-//	ft_free_stacks_t(&t);
+	mlx_hook(data.win, 2, 0, ft_next_game, &data);
 	mlx_loop(data.mlx);
+	close(fd);
+	ft_free_stacks_t(&data);
 	return (0);
 }
