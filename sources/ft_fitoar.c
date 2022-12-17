@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 20:12:02 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/16 19:13:17 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/17 12:07:15 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ void	ft_fitoar(t_data *data, int fd)
 	int		i;
 	int		nbr;
 
-	nbr = 0;
 	i = 0;
 	data->map = get_next_line(fd);
-	data->matrix = (char **)malloc(sizeof(char *) * data->map_size - 1);
-	ft_printf("mapa size: %d\n", data->map_size);
+	data->matrix = (char **)malloc(sizeof(char *) * data->map_height - 1);
 	if (!data->matrix)
 		exit (0);
 	while (data->map)

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/16 19:15:55 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/17 11:40:19 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ typedef struct s_data {
 	void	*win;
 	char	*addr;
 	char	*map;
-	int		map_size;
+	int		map_height;// altura of the map //
+	int		map_width;// anchura del mapa //
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
@@ -64,11 +65,13 @@ void	ft_free_stacks_t(t_data *t);
 
 // Function start the game //
 void	ft_start_game(t_data *data);
+
 void	ft_print_stack(t_data *t);
 int		ft_next_game(int keycode, t_data *data);
 void	ft_after_loading(t_data *data);
 
 
+void	ft_load_images(t_data *data);
 int		ft_wait_time(t_data *data);
 
 #endif
