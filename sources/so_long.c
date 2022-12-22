@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	ft_check_errors(&data);
 	data.mlx = mlx_init();
 	ft_start_game(&data);
+//	ft_printmap(&data);
 	mlx_hook(data.win, 2, 0, ft_next_game, &data);
 	mlx_loop_hook(data.mlx, ft_wait_time, &data);
 	mlx_loop(data.mlx);

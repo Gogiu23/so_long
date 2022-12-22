@@ -40,15 +40,22 @@ int	ft_next_game(int keycode, t_data *data)
 	}
 	if (keycode == 18)
 	{
+//		int	a;
+//		int b;
+//
+//		a = 0;
+//		b = 0;
 		data->step++;
 		mlx_clear_window(data->mlx, data->win);
 		mlx_destroy_image(data->mlx, data->img);
 		data->img = mlx_new_image(data->mlx, 1000, 400);
-		data->pic = mlx_xpm_file_to_image(data->mlx, "images/Frame-1loadingtest.xpm", \
+		data->pic = mlx_xpm_file_to_image(data->mlx, "images/Slice-1newlev1.xpm", \
 				&data->img_width, &data->img_height);
 		data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
 				&data->line_length, &data->endian);
-		mlx_put_image_to_window(data->mlx, data->win, data->pic, 350, 100);
+//		ft_load_images(data);
+		mlx_put_image_to_window(data->mlx, data->win, data->pic, data->x, data->y);
+//		mlx_put_image_to_window(data->mlx, data->win, data->imgs[0].img, a, b);
 	}
 	return (0);
 }
@@ -57,7 +64,6 @@ int	ft_wait_time(t_data *data)
 {
 	ft_printf("data->time: %d\n", data->time);
 	ft_printf("data-step: %d\n", data->step);
-//	data->time = 0;
 	if (data->step == 2)
 		data->time++;
 	if (data->time >= 20000)

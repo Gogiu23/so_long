@@ -21,9 +21,10 @@
 
 typedef struct	s_img {
 	void	*img;
+	char	*addr;
 	int		bpp;
-	int		line_length;
-	int		endianl;
+	int		length;
+	int		endian;
 }	t_img;
 
 typedef struct s_data {
@@ -72,6 +73,10 @@ void	ft_after_loading(t_data *data);
 
 
 void	ft_load_images(t_data *data);
+void	ft_printmap(t_data *data);
 int		ft_wait_time(t_data *data);
+
+// Fucntion to exit the game without leaks //
+int		ft_exit_game(int keycode, t_data *data);
 
 #endif
