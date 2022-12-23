@@ -19,23 +19,31 @@ void	ft_after_loading(t_data *data)
 //	mlx_clear_window(data->mlx, data->win);
 	mlx_destroy_image(data->mlx, data->img);
 	mlx_destroy_window(data->mlx, data->win);
-	data->mlx = mlx_init();
 	ft_load_images(data);
+	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, (data->map_width * 50), (data->map_height * 50), "Time machine 2");
-//	data->imgs->img = mlx_new_image(data->mlx, (data->map_width * 50), \
-//			(data->map_height * 50));
 	ft_printmap(data);
 	mlx_hook(data->win, 2, 0, ft_exit_game, data);
+	mlx_hook(data->win, 17, 0, (void *)exit, 0);
 	mlx_loop(data->mlx);
 }
 
 void	ft_load_images(t_data *data)
 {
-	data->imgs = malloc(sizeof(t_img) * (1));
+	data->imgs = malloc(sizeof(t_img) * (2));
 	data->imgs[0].img = mlx_xpm_file_to_image(data->mlx, \
 			"images/image-12wallgrey2.xpm", &data->img_width, &data->img_height);
 	data->imgs[0].addr = mlx_get_data_addr(data->imgs[0].img, \
 			&data->imgs[0].bpp, &data->imgs[0].length, &data->imgs[0].endian);
+	data->imgs[1].img =  mlx_xpm_file_to_image(data->mlx, \
+			"images/Slice-1playerground.xpm", &data->img_width, &data->img_height);
+	data->imgs[1].addr = mlx_get_data_addr(data->imgs[1].img, \
+			&data->imgs[1].bpp, &data->imgs[1].length, &data->imgs[1].endian);
+	data->imgs[2].img =  mlx_xpm_file_to_image(data->mlx, \
+			"images/ground.xpm", &data->img_width, &data->img_height);
+	data->imgs[2].addr = mlx_get_data_addr(data->imgs[2].img, \
+			&data->imgs[2].bpp, &data->imgs[2].length, &data->imgs[2].endian);
+	
 }
 
 void	ft_printmap(t_data *data)
@@ -53,7 +61,13 @@ void	ft_printmap(t_data *data)
 			if (data->matrix[a][b] == '1')
 				mlx_put_image_to_window(data->mlx, data->win, \
 						data->imgs[0].img, (b * 50), (a * 50));
-			mlx_string_put(data->mlx, data->win, 10, 10, 0xFF4500, "Esc = exit game");
+			if (data->matrix[a][b] == 'P')
+				mlx_put_image_to_window(data->mlx, data->win, \
+						data->imgs[1].img, (b * 50), (a * 50));
+			if (data->matrix[a][b] == '0')
+				mlx_put_image_to_window(data->mlx, data->win, \
+						data->imgs[2].img, (b * 50), (a * 50));
+		mlx_string_put(data->mlx, data->win, 10, 10, 0xFF4500, "Esc = exit game");
 			b++;
 		}
 		a++;
