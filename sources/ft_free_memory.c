@@ -27,5 +27,12 @@ void	ft_free_stacks_t(t_data *t)
 			nbr++;
 		}
 		free(t->matrix);
+		nbr = 0;
+		while (t->imgs[nbr].img)
+		{
+			free(t->imgs[nbr].img);
+			nbr++;
+		}
+		free(t->imgs->img);
 	}
 }
