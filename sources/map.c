@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 05:10:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/17 13:27:25 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/25 00:57:23 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 void	ft_start_game(t_data *data)
 {
 	data->step++;
-	data->win = mlx_new_window(data->mlx, 1000, 400, "Time machine");
+	data->win = mlx_new_window(data->mlx, 1000, 400, "7EVEN SWORDS");
 	data->img = mlx_new_image(data->mlx, 1000, 400);
 	data->pic = mlx_xpm_file_to_image(data->mlx, "images/image-7start.xpm", \
 			&data->img_width, &data->img_height);
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
 			&data->line_length, &data->endian);
 	mlx_put_image_to_window(data->mlx, data->win, data->pic, data->x, data->y);
-	mlx_string_put(data->mlx, data->win, 400, 100, 0xFFFF00, "METAUNIVERS");
-	mlx_string_put(data->mlx, data->win, 400, 150, 0xFF4500, "1 NEW GAME");
-	mlx_string_put(data->mlx, data->win, 400, 180, 0xFF4500, "2 EXIT GAME");
+	mlx_string_put(data->mlx, data->win, 400, 100, 0xFC1026, "7EVEN SWORDS");
+	mlx_string_put(data->mlx, data->win, 400, 150, 0x2323F0, "1 =  NEW GAME");
+	mlx_string_put(data->mlx, data->win, 400, 180, 0x23F0BE, "Esc =  EXIT GAME");
 }
 
 int	ft_next_game(int keycode, t_data *data)
@@ -40,11 +40,6 @@ int	ft_next_game(int keycode, t_data *data)
 	}
 	if (keycode == 18)
 	{
-//		int	a;
-//		int b;
-//
-//		a = 0;
-//		b = 0;
 		data->step++;
 		mlx_clear_window(data->mlx, data->win);
 		mlx_destroy_image(data->mlx, data->img);
@@ -53,9 +48,7 @@ int	ft_next_game(int keycode, t_data *data)
 				&data->img_width, &data->img_height);
 		data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
 				&data->line_length, &data->endian);
-//		ft_load_images(data);
 		mlx_put_image_to_window(data->mlx, data->win, data->pic, data->x, data->y);
-//		mlx_put_image_to_window(data->mlx, data->win, data->imgs[0].img, a, b);
 	}
 	return (0);
 }

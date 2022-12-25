@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/16 19:39:02 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/25 01:06:28 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ int	main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	ft_get_size_map(&data, fd, argv);
 	ft_fitoar(&data, fd);
-	ft_print_stack(&data);
+//	ft_print_stack(&data);
 	ft_check_errors(&data);
 	data.mlx = mlx_init();
 	ft_start_game(&data);
-//	ft_printmap(&data);
 	mlx_hook(data.win, 2, 0, ft_next_game, &data);
 	mlx_hook(data.win, 17, 0, (void *)exit, 0);
 	mlx_loop_hook(data.mlx, ft_wait_time, &data);

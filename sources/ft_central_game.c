@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/17 13:27:10 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/25 01:06:03 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_after_loading(t_data *data)
 	mlx_destroy_window(data->mlx, data->win);
 	ft_load_images(data);
 	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, (data->map_width * 50), (data->map_height * 50), "Time machine 2");
+	data->win = mlx_new_window(data->mlx, (data->map_width * 50), \
+			(data->map_height * 50), "7EVEN SWORDS");
 	ft_printmap(data);
 	mlx_hook(data->win, 2, 0, ft_exit_game, data);
 	mlx_hook(data->win, 17, 0, (void *)exit, 0);
@@ -29,7 +30,9 @@ void	ft_after_loading(t_data *data)
 
 void	ft_load_images(t_data *data)
 {
-	data->imgs = malloc(sizeof(t_img) * (3));
+	data->imgs = malloc(sizeof(t_img) * (3 + 1));
+	if (!data->imgs)
+		free(data->imgs);
 	data->imgs[0].img = mlx_xpm_file_to_image(data->mlx, \
 			"images/image-12wallgrey2.xpm", &data->img_width, &data->img_height);
 	data->imgs[0].addr = mlx_get_data_addr(data->imgs[0].img, \
@@ -92,7 +95,7 @@ int	ft_exit_game(int keycode, t_data *data)
 	{
 		mlx_destroy_image(data->mlx, data->img);
 		mlx_destroy_window(data->mlx, data->win);
-//		ft_free_stacks_t(data);
+		ft_free_stacks_t(data);
 		exit (0);
 	}
 	return (0);
