@@ -19,14 +19,11 @@ void	ft_start_game(t_data *data)
 	data->step++;
 	data->win = mlx_new_window(data->mlx, 1000, 400, "7EVEN SWORDS");
 	data->img = mlx_new_image(data->mlx, 1000, 400);
-	data->pic = mlx_xpm_file_to_image(data->mlx, "images/image-7start.xpm", \
+	data->pic = mlx_xpm_file_to_image(data->mlx, "images/start_page.xpm", \
 			&data->img_width, &data->img_height);
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
 			&data->line_length, &data->endian);
 	mlx_put_image_to_window(data->mlx, data->win, data->pic, data->x, data->y);
-	mlx_string_put(data->mlx, data->win, 400, 100, 0xFC1026, "7EVEN SWORDS");
-	mlx_string_put(data->mlx, data->win, 400, 150, 0x2323F0, "1 =  NEW GAME");
-	mlx_string_put(data->mlx, data->win, 400, 180, 0x23F0BE, "Esc =  EXIT GAME");
 }
 
 int	ft_next_game(int keycode, t_data *data)

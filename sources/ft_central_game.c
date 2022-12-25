@@ -61,7 +61,6 @@ void	ft_printmap(t_data *data)
 	int	b;
 
 	a = 0;
-	b = 0;
 	while (data->matrix[a])
 	{
 		b = 0;
