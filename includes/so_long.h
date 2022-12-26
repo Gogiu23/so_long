@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/19 17:34:53 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/26 06:37:18 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ void	ft_after_loading(t_data *data);
 
 
 void	ft_load_images(t_data *data);
-void	ft_printmap(t_data *data);
+void	ft_first_printmap(t_data *data);
+void 	ft_second_printmap(t_data *data, int a, int b);
 int		ft_wait_time(t_data *data);
 
 // Fucntion to exit the game without leaks //

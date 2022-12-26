@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 02:21:33 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/16 18:19:43 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/26 02:15:23 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,7 @@ void	ft_free_stacks_t(t_data *t)
 			nbr++;
 		}
 		free(t->matrix);
-		nbr = 0;
-		while (t->imgs[nbr].img)
-		{
-			free(t->imgs[nbr].img);
-			nbr++;
-		}
-		free(t->imgs->img);
+		if (t->imgs)
+			free(t->imgs);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 05:10:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/25 00:57:23 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/26 06:32:25 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,11 @@ int	ft_next_game(int keycode, t_data *data)
 {
 	if (keycode == 53)
 	{
-		mlx_destroy_image(data->mlx, data->img);
-		mlx_destroy_window(data->mlx, data->win);
 		ft_free_stacks_t(data);
+		mlx_destroy_window(data->mlx, data->win);
 		exit (0);
 	}
-	if (keycode == 18)
+	if (keycode == 36)
 	{
 		data->step++;
 		mlx_clear_window(data->mlx, data->win);

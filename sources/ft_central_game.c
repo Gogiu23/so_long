@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/25 01:06:03 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/26 06:46:26 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_after_loading(t_data *data)
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, (data->map_width * 50), \
 			(data->map_height * 50), "7EVEN SWORDS");
-	ft_printmap(data);
+	ft_first_printmap(data);
 	mlx_hook(data->win, 2, 0, ft_exit_game, data);
 	mlx_hook(data->win, 17, 0, (void *)exit, 0);
 	mlx_loop(data->mlx);
@@ -55,7 +55,20 @@ void	ft_load_images(t_data *data)
 			&data->imgs[4].bpp, &data->imgs[4].length, &data->imgs[4].endian);
 }
 
-void	ft_printmap(t_data *data)
+void 	ft_second_printmap(t_data *data, int a, int b)
+{	
+	if (data->matrix[a][b] == '0')
+		mlx_put_image_to_window(data->mlx, data->win, \
+				data->imgs[2].img, (b * 50), (a * 50));
+	else if (data->matrix[a][b] == 'C')
+		mlx_put_image_to_window(data->mlx, data->win, \
+				data->imgs[3].img, (b * 50), (a * 50));
+	if (data->matrix[a][b] == 'E')
+		mlx_put_image_to_window(data->mlx, data->win, \
+				data->imgs[4].img, (b * 50), (a * 50));
+}
+
+void	ft_first_printmap(t_data *data)
 {
 	int	a;
 	int	b;
@@ -69,19 +82,11 @@ void	ft_printmap(t_data *data)
 			if (data->matrix[a][b] == '1')
 				mlx_put_image_to_window(data->mlx, data->win, \
 						data->imgs[0].img, (b * 50), (a * 50));
-			 if (data->matrix[a][b] == 'P')
+			 else if (data->matrix[a][b] == 'P')
 				mlx_put_image_to_window(data->mlx, data->win, \
 						data->imgs[1].img, (b * 50), (a * 50));
-			 if (data->matrix[a][b] == '0')
-				mlx_put_image_to_window(data->mlx, data->win, \
-						data->imgs[2].img, (b * 50), (a * 50));
-			 if (data->matrix[a][b] == 'C')
-				mlx_put_image_to_window(data->mlx, data->win, \
-						data->imgs[3].img, (b * 50), (a * 50));
-			 if (data->matrix[a][b] == 'E')
-				 mlx_put_image_to_window(data->mlx, data->win, \
-						 data->imgs[4].img, (b * 50), (a * 50));
-		mlx_string_put(data->mlx, data->win, 10, 10, 0xFF4550, "Esc = exit game");
+			mlx_string_put(data->mlx, data->win, 10, 10, 0xFF4550, "Esc = exit game");
+			ft_second_printmap(data, a, b);
 			b++;
 		}
 		a++;
@@ -92,9 +97,8 @@ int	ft_exit_game(int keycode, t_data *data)
 {
 	if (keycode == 53)
 	{
-		mlx_destroy_image(data->mlx, data->img);
-		mlx_destroy_window(data->mlx, data->win);
 		ft_free_stacks_t(data);
+		mlx_destroy_window(data->mlx, data->win);
 		exit (0);
 	}
 	return (0);
