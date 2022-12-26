@@ -73,7 +73,7 @@ void	ft_after_loading(t_data *data);
 
 
 void	ft_load_images(t_data *data);
-void	ft_first_printmap(t_data *data);
+int		ft_first_printmap(t_data *data);
 void 	ft_second_printmap(t_data *data, int a, int b);
 int		ft_wait_time(t_data *data);
 
