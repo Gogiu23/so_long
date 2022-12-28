@@ -38,8 +38,6 @@ int	ft_next_game(int keycode, t_data *data)
 	{
 		data->step++;
 		mlx_clear_window(data->mlx, data->win);
-//		mlx_destroy_image(data->mlx, data->img);
-//		data->img = mlx_new_image(data->mlx, 1000, 400);
 		data->pic = mlx_xpm_file_to_image(data->mlx, "images/Slice-1newlev1.xpm", \
 				&data->img_width, &data->img_height);
 		data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
@@ -51,8 +49,6 @@ int	ft_next_game(int keycode, t_data *data)
 
 int	ft_wait_time(t_data *data)
 {
-//	ft_printf("data->time: %d\n", data->time);
-//	ft_printf("data-step: %d\n", data->step);
 	if (data->step == 2)
 		data->time++;
 	if (data->time >= 20000)

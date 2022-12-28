@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/26 06:37:18 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/27 17:20:47 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,17 @@ void	ft_after_loading(t_data *data);
 
 
 void	ft_load_images(t_data *data);
+void	ft_load_more_images(t_data *data);
 int		ft_first_printmap(t_data *data);
 void 	ft_second_printmap(t_data *data, int a, int b);
 int		ft_wait_time(t_data *data);
+
+//player movement in situ
+void 	ft_player_stop(t_data *data, int a, int b);
+void	ft_player_stop_second(t_data *data, int a, int b);
+void	ft_player_stop_back(t_data *data, int a, int b);
+void	ft_player_stop_back_second(t_data *data, int a, int b);
+
 
 // Fucntion to exit the game without leaks //
 int		ft_exit_game(int keycode, t_data *data);
