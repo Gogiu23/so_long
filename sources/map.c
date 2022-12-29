@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 05:10:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/26 06:32:25 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/29 01:29:45 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 void	ft_start_game(t_data *data)
 {
+	data->mlx = mlx_init();
 	data->step++;
 	data->win = mlx_new_window(data->mlx, 1000, 400, "7EVEN SWORDS");
 	data->img = mlx_new_image(data->mlx, 1000, 400);
@@ -24,6 +25,10 @@ void	ft_start_game(t_data *data)
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
 			&data->line_length, &data->endian);
 	mlx_put_image_to_window(data->mlx, data->win, data->pic, data->x, data->y);
+	mlx_hook(data->win, 2, 0, ft_next_game, data);
+	mlx_hook(data->win, 17, 0, (void *)exit, 0);
+	mlx_loop_hook(data->mlx, ft_wait_time, data);
+	mlx_loop(data->mlx);
 }
 
 int	ft_next_game(int keycode, t_data *data)

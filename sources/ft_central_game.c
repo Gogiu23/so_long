@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/27 17:22:38 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/29 01:10:50 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,6 @@ void	ft_after_loading(t_data *data)
 	mlx_hook(data->win, 17, 0, (void *)exit, 0);
 	mlx_loop_hook(data->mlx, ft_first_printmap, data);
 	mlx_loop(data->mlx);
-}
-
-void 	ft_second_printmap(t_data *data, int a, int b)
-{	
-	if (data->matrix[a][b] == '0')
-		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[3].img, (b * 50), (a * 50));
-	else if (data->matrix[a][b] == 'C')
-		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[4].img, (b * 50), (a * 50));
-	if (data->matrix[a][b] == 'E')
-		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[5].img, (b * 50), (a * 50));
 }
 
 int	ft_exit_game(int keycode, t_data *data)

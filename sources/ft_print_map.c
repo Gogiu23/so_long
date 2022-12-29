@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:57:25 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/27 17:07:06 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/29 01:34:13 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int	ft_first_printmap(t_data *data)
 				mlx_put_image_to_window(data->mlx, data->win, \
 						data->imgs[0].img, (b * 50), (a * 50));
 			ft_player_stop(data, a, b);
+			usleep(250);
+			if (data->x == 6)
+				ft_player_stop_back(data, a, b);
 			ft_second_printmap(data, a, b);
 			b++;
 		}
@@ -38,3 +41,15 @@ int	ft_first_printmap(t_data *data)
 	return (0);
 }
 
+void 	ft_second_printmap(t_data *data, int a, int b)
+{	
+	if (data->matrix[a][b] == '0')
+		mlx_put_image_to_window(data->mlx, data->win, \
+				data->imgs[3].img, (b * 50), (a * 50));
+	else if (data->matrix[a][b] == 'C')
+		mlx_put_image_to_window(data->mlx, data->win, \
+				data->imgs[4].img, (b * 50), (a * 50));
+	if (data->matrix[a][b] == 'E')
+		mlx_put_image_to_window(data->mlx, data->win, \
+				data->imgs[5].img, (b * 50), (a * 50));
+}
