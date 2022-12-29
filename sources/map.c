@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 05:10:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/29 01:29:45 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:50:25 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_start_game(t_data *data)
 	data->step++;
 	data->win = mlx_new_window(data->mlx, 1000, 400, "7EVEN SWORDS");
 	data->img = mlx_new_image(data->mlx, 1000, 400);
-	data->pic = mlx_xpm_file_to_image(data->mlx, "images/start_page.xpm", \
+	data->pic = mlx_xpm_file_to_image(data->mlx, "images/image-1fondonv1.xpm", \
 			&data->img_width, &data->img_height);
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
 			&data->line_length, &data->endian);
