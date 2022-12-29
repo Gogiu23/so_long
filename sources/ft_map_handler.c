@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:45:35 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/26 06:43:10 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/29 01:53:08 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 
 void	ft_get_size_map(t_data *data, int fd, char **argv)
 {
-	int	i;
-
-	i = 0;
 	data->map_height = 0;
 	while (1)
 	{
