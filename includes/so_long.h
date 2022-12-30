@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/27 17:20:47 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/30 05:36:59 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 
+//plpo = player position in the map[1] = X, [2] = Y
 typedef struct	s_img {
 	void	*img;
 	char	*addr;
+	int		plpo[2];
 	int		bpp;
 	int		length;
 	int		endian;
@@ -55,6 +57,7 @@ void	ft_pixel_push(t_data *data, int x, int y, int color);
 // Function in order to get the size of the map //
 void	ft_get_map(t_data *data, int fd);
 void	ft_get_size_map(t_data *data, int fd, char **argv);
+void	ft_get_player_position(t_data *data);
 
 // FUnctions check errors //
 void	ft_check_errors(t_data *data);
@@ -87,5 +90,11 @@ void	ft_player_stop_back_second(t_data *data, int a, int b);
 
 // Fucntion to exit the game without leaks //
 int		ft_exit_game(int keycode, t_data *data);
+
+//Player movements
+int		ft_player_move_right(t_data *data);
+int		ft_player_move_left(t_data *data);
+int		ft_player_move_up(t_data *data);
+int		ft_player_move_down(t_data *data);
 
 #endif

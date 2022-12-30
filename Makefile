@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 12:09:31 by gdominic          #+#    #+#              #
-#    Updated: 2022/11/15 12:51:13 by gdominic         ###   ########.fr        #
+#    Updated: 2022/12/30 00:42:03 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ DEPS			=$(SOURCES:.c=.d)
 
 all:
 	$(MAKE) -C mlx
+	@cp ./mlx/libmlx.dylib ./libmlx.dylib
 	$(MAKE) -C libft
 	@$(MAKE) $(NAME)
 

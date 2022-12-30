@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_player_movements.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/30 01:36:54 by gdominic         ###   ########.fr       */
+/*   Created: 2022/12/30 04:29:09 by gdominic          #+#    #+#             */
+/*   Updated: 2022/12/30 06:26:39 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
-
-int	main(int argc, char **argv)
+/*
+int	ft_player_move_right(t_data *data)
 {
-	t_data	data;
-	int		fd;
+//	mlx_put_image_to_window(data->mlx, data->win, data->imgs[1].img, 
 
-	data.step = 0;
-	if (argc == 1)
-		return (0);
-	fd = open(argv[1], O_RDONLY);
-	ft_get_size_map(&data, fd, argv);
-	ft_fitoar(&data, fd);
-//	ft_print_stack(&data);
-	ft_check_errors(&data);
-//	data.mlx = mlx_init();
-	ft_start_game(&data);
-	data.x = 0;
-	data.y = 0;
-//	mlx_hook(data.win, 2, 0, ft_next_game, &data);
-//	mlx_hook(data.win, 17, 0, (void *)exit, 0);
-//	mlx_loop_hook(data.mlx, ft_wait_time, &data);
-//	mlx_loop(data.mlx);
 	return (0);
 }
+
+int	ft_player_move_left(t_data *data)
+{
+
+	return (0);
+}
+
+int	ft_player_move_up(t_data *data)
+{
+
+	return (0);
+}
+
+int	ft_player_move_down(t_data *data)
+{
+
+	return (0);
+}*/
