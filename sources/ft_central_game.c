@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/30 05:15:52 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/31 06:32:33 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_after_loading(t_data *data)
 	mlx_destroy_image(data->mlx, data->img);
 	mlx_destroy_window(data->mlx, data->win);
 	ft_load_images(data);
+	ft_get_player_position(data);
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, (data->map_width * 50), \
 			(data->map_height * 50), "7EVEN SWORDS");
@@ -38,10 +39,10 @@ int	ft_exit_game(int keycode, t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 		exit (0);
 	}
-//	else if (keycode == 2 || keycode == 124)
-//		ft_player_move_right(data);
-//	else if (keycode == 0 || keycode == 123)
-//		ft_player_move_left(data);
+	else if (keycode == 2 || keycode == 124)
+		ft_player_move_right(data);
+	else if (keycode == 0 || keycode == 123)
+		ft_player_move_left(data);
 //	else if (keycode == 13 || keycode == 126)
 //		ft_player_move_up(data);
 //	else if (keycode == 1 || keycode == 125)

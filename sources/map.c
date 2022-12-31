@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 05:10:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/30 01:57:37 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/31 06:24:00 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,33 @@ void	ft_start_game(t_data *data)
 	mlx_hook(data->win, 17, 0, (void *)exit, 0);
 	mlx_loop_hook(data->mlx, ft_wait_time, data);
 	mlx_loop(data->mlx);
+}
+
+int	ft_get_player_position(t_data *data)
+{
+	int	a;
+	int	b;
+
+	a = 0;
+	while (data->matrix[a])
+	{
+		b = 0;
+		while (data->matrix[a][b])
+		{
+			if (data->matrix[a][b] == 'P')
+			{
+				ft_printf("Valor de a: %d\n", a * 50);
+				ft_printf("data->matrix[a][b]: %c\n", data->matrix[a][b]);
+				ft_printf("Valor de b: %d\n", b * 50);
+				data->imgs->pl[0] = (a * 50);
+				data->imgs->pl[1] = (b * 50) - 1;
+				return (1);
+			}
+			b++;
+		}
+		a++;
+	}
+	return (0);
 }
 
 int	ft_next_game(int keycode, t_data *data)

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 17:09:00 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/30 06:29:38 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/31 05:46:58 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,109 +14,100 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-void 	ft_player_stop(t_data *data, int a, int b)
+void	ft_player_stop(t_data *data)
 {
-	if (data->matrix[a][b] == 'P' && data->x == 0)
+	if (data->matrix[data->a][data->b] == 'P' && data->x == 0)
 	{
-		ft_printf("a: %d\n", a);
-		ft_printf("b: %d\n", b);
+//		data->imgs->pl[0] = data->a * 50;
+//		data->imgs->pl[1] = data->b * 50;
+		ft_printf("Valor de data->b: %d\n", data->b);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[1].img, (b * 50), (a * 50));
+				data->imgs[1].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->x++;
 		return ;
 	}
-	else if (data->matrix[a][b] == 'P' && data->x == 1)
+	else if (data->matrix[data->a][data->b] == 'P' && data->x == 1)
 	{
-//		ft_printf("X2: %d\n", data->x);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[2].img, (b * 50), (a * 50));
+				data->imgs[2].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->x++;
 		return ;
 	}
-	else if (data->matrix[a][b] == 'P' && data->x == 2)
+	else if (data->matrix[data->a][data->b] == 'P' && data->x == 2)
 	{
-//		ft_printf("X3: %d\n", data->x);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[6].img, (b * 50), (a * 50));
+				data->imgs[6].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->x++;
 		return ;
 	}
-	ft_player_stop_second(data, a, b);
+	ft_player_stop_second(data);
 }
 
-void	ft_player_stop_second(t_data *data, int a, int b)
+void	ft_player_stop_second(t_data *data)
 {
-	if (data->matrix[a][b] == 'P' && data->x == 3)
+	if (data->matrix[data->a][data->b] == 'P' && data->x == 3)
 	{
-//		ft_printf("X4: %d\n", data->x);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[7].img, (b * 50), (a * 50));
+				data->imgs[7].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->x++;
 		return ;
 	}
-	else if (data->matrix[a][b] == 'P' && data->x == 4)
+	else if (data->matrix[data->a][data->b] == 'P' && data->x == 4)
 	{
-//		ft_printf("X5: %d\n", data->x);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[8].img, (b * 50), (a * 50));
+				data->imgs[8].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->x++;
 		return ;
 	}
-	else if (data->matrix[a][b] == 'P' && data->x == 5)
+	else if (data->matrix[data->a][data->b] == 'P' && data->x == 5)
 	{
-//		ft_printf("X6: %d\n", data->x);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[9].img, (b * 50), (a * 50));
+				data->imgs[9].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->y++;
 		data->x++;
 		return ;
 	}
 }
 
-void	ft_player_stop_back(t_data *data, int a, int b)
+void	ft_player_stop_back(t_data *data)
 {
-	if (data->matrix[a][b] == 'P' && data->y == 1)
+	if (data->matrix[data->a][data->b] == 'P' && data->y == 1)
 	{
-//		ft_printf("X back: %d\n", data->y);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[8].img, (b * 50), (a * 50));
+				data->imgs[8].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->y++;
 		return ;
 	}
-	else if (data->matrix[a][b] == 'P' && data->y == 2)
+	else if (data->matrix[data->a][data->b] == 'P' && data->y == 2)
 	{
-//		ft_printf("X back: %d\n", data->y);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[7].img, (b * 50), (a * 50));
+				data->imgs[7].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->y++;
 		return ;
 	}
-	else if (data->matrix[a][b] == 'P' && data->y == 3)
+	else if (data->matrix[data->a][data->b] == 'P' && data->y == 3)
 	{
-//		ft_printf("X back: %d\n", data->y);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[6].img, (b * 50), (a * 50));
+				data->imgs[6].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->y++;
 		return ;
 	}
-	ft_player_stop_back_second(data, a, b);
+	ft_player_stop_back_second(data);
 }
 
-void	ft_player_stop_back_second(t_data *data, int a, int b)
+void	ft_player_stop_back_second(t_data *data)
 {
-	if (data->matrix[a][b] == 'P' && data->y == 4)
+	if (data->matrix[data->a][data->b] == 'P' && data->y == 4)
 	{
-//		ft_printf("X back: %d\n", data->y);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[2].img, (b * 50), (a * 50));
+				data->imgs[2].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->y++;
 		return ;
 	}
-	else if (data->matrix[a][b] == 'P' && data->y == 5)
+	else if (data->matrix[data->a][data->b] == 'P' && data->y == 5)
 	{
-//		ft_printf("X back: %d\n", data->y);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[1].img, (b * 50), (a * 50));
+				data->imgs[1].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->y = 0;
 		data->x = 0;
 		return ;

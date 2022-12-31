@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 20:12:02 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/30 06:27:34 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/31 06:31:15 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,37 +40,5 @@ void	ft_fitoar(t_data *data, int fd)
 	}
 	data->matrix[i] = NULL;
 	close(fd);
-	ft_get_player_position(data);
-}
-
-void	ft_get_player_position(t_data *data)
-{
-	int	x;
-	int	y;
-	int	t;
-
-	t = 1;
-	x = 0;
-	while (data->matrix[x])
-	{
-//		ft_printf("aqui\n");
-		y = 0;
-		while (data->matrix[x][y])
-		{
-//			ft_printf("aqui 2\n");
-			if (ft_strncmp(data->matrix[x], "P", data->map_width) == 0)
-			{
-				data->imgs->plpo[0] = x - 1;
-				return ;
-			}
-			t++;
-			y++;
-		}
-		x++;
-	}
-	ft_printf("Valor de t: %d\n", t);
-	ft_printf("Valor de y: %d\n", y);
-	ft_printf("Valor de x: %d\n", x);
-	ft_printf("Valor de plpo: %d\n", data->imgs->plpo);
-//	data->imgs->plpo[1] = y;
+//	ft_get_player_position(data);
 }

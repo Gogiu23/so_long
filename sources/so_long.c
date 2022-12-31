@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/30 01:36:54 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/31 06:21:47 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	ft_get_size_map(&data, fd, argv);
 	ft_fitoar(&data, fd);
+//	ft_get_player_position(&data);
 //	ft_print_stack(&data);
 	ft_check_errors(&data);
 //	data.mlx = mlx_init();

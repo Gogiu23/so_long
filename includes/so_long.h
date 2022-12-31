@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/30 05:36:59 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/31 06:17:52 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 
-//plpo = player position in the map[1] = X, [2] = Y
+//pl = player position in the map[1] = X, [2] = Y
 typedef struct	s_img {
 	void	*img;
 	char	*addr;
-	int		plpo[2];
+	int		pl[2];
 	int		bpp;
 	int		length;
 	int		endian;
@@ -42,6 +42,8 @@ typedef struct s_data {
 	int		endian;
 	char	**matrix;
 	char	*pic;
+	int		a;
+	int		b;
 	int		x;
 	int		y;
 	int		img_width;
@@ -57,7 +59,7 @@ void	ft_pixel_push(t_data *data, int x, int y, int color);
 // Function in order to get the size of the map //
 void	ft_get_map(t_data *data, int fd);
 void	ft_get_size_map(t_data *data, int fd, char **argv);
-void	ft_get_player_position(t_data *data);
+int		ft_get_player_position(t_data *data);
 
 // FUnctions check errors //
 void	ft_check_errors(t_data *data);
@@ -78,14 +80,14 @@ void	ft_after_loading(t_data *data);
 void	ft_load_images(t_data *data);
 void	ft_load_more_images(t_data *data);
 int		ft_first_printmap(t_data *data);
-void 	ft_second_printmap(t_data *data, int a, int b);
+void 	ft_second_printmap(t_data *data);
 int		ft_wait_time(t_data *data);
 
 //player movement in situ
-void 	ft_player_stop(t_data *data, int a, int b);
-void	ft_player_stop_second(t_data *data, int a, int b);
-void	ft_player_stop_back(t_data *data, int a, int b);
-void	ft_player_stop_back_second(t_data *data, int a, int b);
+void 	ft_player_stop(t_data *data);
+void	ft_player_stop_second(t_data *data);
+void	ft_player_stop_back(t_data *data);
+void	ft_player_stop_back_second(t_data *data);
 
 
 // Fucntion to exit the game without leaks //
