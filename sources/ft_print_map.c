@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:57:25 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/31 05:54:34 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/31 15:35:00 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	ft_first_printmap(t_data *data)
 			if (data->matrix[data->a][data->b] == '1')
 				mlx_put_image_to_window(data->mlx, data->win, \
 						data->imgs[0].img, (data->b * 50), (data->a * 50));
-			ft_player_stop(data);
-			usleep(150);
-			if (data->x == 6)
-				ft_player_stop_back(data);
+//			ft_player_stop(data);
+//			usleep(150);
+//			if (data->x == 6)
+//				ft_player_stop_back(data);
 			ft_second_printmap(data);
 			data->b++;
 		}

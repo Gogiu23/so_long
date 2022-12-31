@@ -5,6 +5,7 @@ SOURCES += sources/ft_upload_images.c
 SOURCES += sources/ft_pixel_push.c
 SOURCES += sources/ft_map_handler.c
 SOURCES += sources/map.c
+SOURCES += sources/ft_print_player.c
 SOURCES += sources/so_long.c
 SOURCES += sources/ft_print_stack.c
 SOURCES += sources/ft_fitoar.c

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/31 06:32:33 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/12/31 15:35:13 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_after_loading(t_data *data)
 	ft_first_printmap(data);
 	mlx_hook(data->win, 2, 0, ft_exit_game, data);
 	mlx_hook(data->win, 17, 0, (void *)exit, 0);
-	mlx_loop_hook(data->mlx, ft_first_printmap, data);
+	mlx_loop_hook(data->mlx, ft_print_player, data);
 	mlx_loop(data->mlx);
 }
 
