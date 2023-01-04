@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/31 15:17:00 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/04 15:42:10 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int		ft_wait_time(t_data *data);
 
 //player movement in situ
 int		ft_print_player(t_data *data);
+void	ft_print_player2(t_data *data);
 void 	ft_player_stop(t_data *data);
 void	ft_player_stop_second(t_data *data);
 void	ft_player_stop_back(t_data *data);

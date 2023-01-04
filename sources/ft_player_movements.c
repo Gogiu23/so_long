@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 04:29:09 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/31 15:36:03 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/04 16:54:40 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,17 @@
 
 int	ft_player_move_right(t_data *data)
 {
-//	mlx_put_image_to_window(data->mlx, data->win, data->imgs[1].img, \
-//			(data->imgs->pl[1] + 50), (data->imgs->pl[0]));
-	data->imgs->pl[1] += 5;
-	mlx_clear_window(data->mlx, data->win);
-	ft_first_printmap(data);
+	data->imgs->pl[1] += 3;
+//	mlx_clear_window(data->mlx, data->win);
+//	ft_first_printmap(data);
 	return (0);
 }
 
 int	ft_player_move_left(t_data *data)
 {
-	mlx_put_image_to_window(data->mlx, data->win, data->imgs[1].img, \
-			(data->imgs->pl[1] - 50), (data->imgs->pl[0] - 50));
-
+	data->imgs->pl[1] -= 2;
+//	mlx_clear_window(data->mlx, data->win);
+//	ft_first_printmap(data);
 	return (0);
 }
 
