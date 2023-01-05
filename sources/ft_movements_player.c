@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_player_movements.c                              :+:      :+:    :+:   */
+/*   ft_movements_player.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/30 04:29:09 by gdominic          #+#    #+#             */
+/*   Created: 2023/01/05 03:40:37 by gdominic          #+#    #+#             */
 /*   Updated: 2023/01/05 03:45:26 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,33 +14,6 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-int	ft_player_move_right(t_data *data)
+void	ft_move_right(t_data *data)
 {
-	data->imgs->pl[1] += 6;
-	ft_move_right(data);
-	data->y++;
-//	mlx_clear_window(data->mlx, data->win);
-//	ft_first_printmap(data);
-	return (0);
 }
-
-int	ft_player_move_left(t_data *data)
-{
-	data->imgs->pl[1] -= 8;
-	data->y++;
-//	mlx_clear_window(data->mlx, data->win);
-//	ft_first_printmap(data);
-	return (0);
-}
-
-//int	ft_player_move_up(t_data *data)
-//{
-//
-//	return (0);
-//}
-//
-//int	ft_player_move_down(t_data *data)
-//{
-//
-//	return (0);
-//}

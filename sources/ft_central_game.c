@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/04 16:45:03 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/05 03:27:35 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ void	ft_after_loading(t_data *data)
 	data->win = mlx_new_window(data->mlx, (data->map_width * 50), \
 			(data->map_height * 50), "7EVEN SWORDS");
 	data->img = mlx_new_image(data->mlx, (data->map_width * 50), (data->map_height * 50));
-//	ft_first_printmap(data);
+	ft_first_printmap(data);
 	mlx_hook(data->win, 2, 0, ft_exit_game, data);
-	mlx_hook(data->win, 17, 0, (void *)exit, 0);
-	mlx_loop_hook(data->mlx, ft_print_player, data);
+	mlx_hook(data->win, 17, 1L << 0, (void *)exit, 0);
+//	mlx_loop_hook(data->mlx, ft_first_printmap, data);
+	mlx_loop_hook(data->mlx, ft_print_env, data);
 	mlx_loop(data->mlx);
 }
 
@@ -39,6 +40,11 @@ int	ft_exit_game(int keycode, t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 		exit (0);
 	}
+//	while (keycode == 2)
+//	{
+//		mlx_put_image_to_window(data->mlx, data->win, data->imgs[0].img, data->imgs->pl[1], data->imgs->pl[0]);
+//		data->imgs->pl[1] += 8;
+//	}
 	else if (keycode == 2 || keycode == 124)
 		ft_player_move_right(data);
 	else if (keycode == 0 || keycode == 123)

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/04 15:42:10 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/05 03:45:10 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,13 @@ void	ft_after_loading(t_data *data);
 
 void	ft_load_images(t_data *data);
 void	ft_load_more_images(t_data *data);
+int		ft_print_env(t_data *data);
 int		ft_first_printmap(t_data *data);
 void 	ft_second_printmap(t_data *data);
 int		ft_wait_time(t_data *data);
 
 //player movement in situ
-int		ft_print_player(t_data *data);
+void	ft_print_player(t_data *data);
 void	ft_print_player2(t_data *data);
 void 	ft_player_stop(t_data *data);
 void	ft_player_stop_second(t_data *data);
@@ -100,5 +101,10 @@ int		ft_player_move_right(t_data *data);
 int		ft_player_move_left(t_data *data);
 int		ft_player_move_up(t_data *data);
 int		ft_player_move_down(t_data *data);
+
+int		ft_wait_time2(t_data *data);
+int		ft_wait_time3(t_data *data);
+
+void	ft_move_right(t_data *data);
 
 #endif
