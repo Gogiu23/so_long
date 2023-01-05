@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:57:25 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/04 23:25:54 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/05 23:39:08 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_first_printmap(t_data *data)
 		{
 			if (data->matrix[data->a][data->b] == '1')
 				mlx_put_image_to_window(data->mlx, data->win, \
-						data->imgs[0].img, (data->b * 50), (data->a * 50));
+						data->wll_img[1], (data->b * 50), (data->a * 50));
 //			ft_player_stop(data);
 //			usleep(150);
 //			if (data->x == 6)
@@ -42,11 +42,14 @@ void 	ft_second_printmap(t_data *data)
 {	
 	if (data->matrix[data->a][data->b] == '0')
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[3].img, (data->b * 50), (data->a * 50));
+				data->gr_img[1], (data->b * 50), (data->a * 50));
 	else if (data->matrix[data->a][data->b] == 'C')
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[4].img, (data->b * 50), (data->a * 50));
+				data->cll_img[1], (data->b * 50), (data->a * 50));
 	else if (data->matrix[data->a][data->b] == 'E')
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[5].img, (data->b * 50), (data->a * 50));
+				data->ext_img[1], (data->b * 50), (data->a * 50));
+	else if (data->matrix[data->a][data->b] == 'P')
+		mlx_put_image_to_window(data->mlx, data->win, \
+				data->pl_img[1], data->b * 50, data->a * 50);
 }

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/05 03:45:10 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/05 22:08:39 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 
+//MAKROS FOR THE GAME
+/*
+ * PXS = pixel size
+ */
+# define PXS 50
+
 //pl = player position in the map[1] = X, [2] = Y
 typedef struct	s_img {
 	void	*img;
@@ -28,6 +34,14 @@ typedef struct	s_img {
 	int		length;
 	int		endian;
 }	t_img;
+
+/*
+ * pl_img = player image
+ * gr_img = ground image
+ * wll_img = wall image
+ * ext_img = exit image
+ * cll_img = collectable image
+ */
 
 typedef struct s_data {
 	void	*mlx;
@@ -42,6 +56,11 @@ typedef struct s_data {
 	int		endian;
 	char	**matrix;
 	char	*pic;
+	void	*pl_img[17];
+	void	*gr_img[2];
+	void	*wll_img[2];
+	void	*ext_img[3];
+	void	*cll_img[6];
 	int		a;
 	int		b;
 	int		x;

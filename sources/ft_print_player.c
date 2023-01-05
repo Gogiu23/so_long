@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:11:50 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/05 03:27:15 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/05 23:43:38 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,20 @@
 
 int	ft_print_env(t_data *data)
 {
-	if (data->y != 0)
+	if (data->y > 0)
 	{
-		mlx_clear_window(data->mlx, data->win);
-		ft_first_printmap(data);
+//		mlx_clear_window(data->mlx, data->win);
+//		ft_first_printmap(data);
+//		ft_print_player(data);
+//		usleep(50000);
 		data->y = 0;
 	}
-	ft_print_player(data);
+	else
+		ft_print_player(data);
 	usleep(50000);
 	return (0);
 }
 
-//int	ft_wait_time2(t_data *data)
-//{
-//	ft_printf("data->step: %d\n", data->step);
-//	if (data->step == 2)
-//		data->time++;
-////	if (data->time >= 80)
-////		ft_print_player(data);
-//	return (0);
-//}
 void	ft_print_player(t_data *data)
 {
 	t_img	*move;
@@ -51,7 +45,7 @@ void	ft_print_player(t_data *data)
 		//mlx_clear_window(data->mlx, data->win);
 		//ft_first_printmap(data);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				move[1].img, (move->pl[1]), (move->pl[0]));
+				data->pl_img[0], (move->pl[1]), (move->pl[0]));
 		data->x++;
 		//usleep(60000);
 		return ;
@@ -62,7 +56,7 @@ void	ft_print_player(t_data *data)
 		//mlx_clear_window(data->mlx, data->win);
 		//ft_first_printmap(data);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				move[2].img, (move->pl[1]), (move->pl[0]));
+				data->pl_img[1], (move->pl[1]), (move->pl[0]));
 		data->x++;
 		//usleep(60000);
 		return ;
@@ -73,7 +67,7 @@ void	ft_print_player(t_data *data)
 		//mlx_clear_window(data->mlx, data->win);
 		//ft_first_printmap(data);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				move[6].img, (move->pl[1]), (move->pl[0]));
+				data->pl_img[2], (move->pl[1]), (move->pl[0]));
 		data->x++;
 		return ;
 		//usleep(60000);
@@ -89,7 +83,7 @@ void	ft_print_player2(t_data *data)
 		//mlx_clear_window(data->mlx, data->win);
 		//ft_first_printmap(data);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[7].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
+				data->pl_img[3], (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->x++;
 		//usleep(60000);
 		return ;
@@ -100,7 +94,7 @@ void	ft_print_player2(t_data *data)
 		//mlx_clear_window(data->mlx, data->win);
 		//ft_first_printmap(data);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[8].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
+				data->pl_img[4], (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->x++;
 		//usleep(60000);
 		return ;
@@ -111,7 +105,7 @@ void	ft_print_player2(t_data *data)
 		//mlx_clear_window(data->mlx, data->win);
 		//ft_first_printmap(data);
 		mlx_put_image_to_window(data->mlx, data->win, \
-				data->imgs[9].img, (data->imgs->pl[1]), (data->imgs->pl[0]));
+				data->pl_img[5], (data->imgs->pl[1]), (data->imgs->pl[0]));
 		data->y++;
 		data->x = 0;
 		//usleep(60000);

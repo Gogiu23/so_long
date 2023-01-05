@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 05:10:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/04 16:53:02 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/05 23:25:27 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void	ft_start_game(t_data *data)
 {
 	data->mlx = mlx_init();
 	data->step++;
-	data->win = mlx_new_window(data->mlx, 1000, 400, "7EVEN SWORDS");
-	data->img = mlx_new_image(data->mlx, 1000, 400);
-	data->pic = mlx_png_file_to_image(data->mlx, "images/start_page.png", \
+	data->win = mlx_new_window(data->mlx, 1325, 600, "7EVEN SWORDS");
+	data->img = mlx_new_image(data->mlx, 1325, 600);
+	data->pic = mlx_png_file_to_image(data->mlx, \
+			"images/start_game/start_page.png", \
 			&data->img_width, &data->img_height);
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
 			&data->line_length, &data->endian);
@@ -70,7 +71,8 @@ int	ft_next_game(int keycode, t_data *data)
 	{
 		data->step++;
 		mlx_clear_window(data->mlx, data->win);
-		data->pic = mlx_xpm_file_to_image(data->mlx, "images/Slice-1newlev1.xpm", \
+		data->pic = mlx_png_file_to_image(data->mlx, \
+				"images/start_game/level1.png", \
 				&data->img_width, &data->img_height);
 		data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
 				&data->line_length, &data->endian);

@@ -258,6 +258,7 @@ PNG_MAGIC_SIZE	mlx/mlx_png.c	18;"	d	file:
 PURPLE	Makefile	/^PURPLE		=	\\033[0;35m$/;"	m
 PURPLE	libft/Makefile	/^PURPLE			=	\\033[0;35m$/;"	m
 PURPLE	mlx/Makefile	/^PURPLE=$'\\x1b[35m$/;"	m
+PXS	includes/so_long.h	26;"	d
 R	04012023.vim	/^nnoremap <buffer> <silent> R :call nerdtree#ui_glue#invokeKeyMap("R")$/;"	m
 RED	Makefile	/^RED	 		=	\\033[0;31m$/;"	m
 RED	libft/Makefile	/^RED				=	\\033[0;31m$/;"	m
@@ -317,6 +318,7 @@ bytes_per_pixel	.mlx/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:R
 bytes_per_pixel	mlx/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:RGB, 4:RGBA *\/ $/;"	m	struct:__anon2	file:
 cc	04012023.vim	/^nnoremap cc :normal Hi\/\/jkj$/;"	m
 cd	04012023.vim	/^nnoremap <buffer> <silent> cd :call nerdtree#ui_glue#invokeKeyMap("cd")$/;"	m
+cll_img	includes/so_long.h	/^	void	*cll_img[6];$/;"	m	struct:s_data
 col	.mlx/mlx_xpm.c	/^  int           col;$/;"	m	struct:s_xpm_col	file:
 col	mlx/mlx_xpm.c	/^  int           col;$/;"	m	struct:s_xpm_col	file:
 color	.mlx/mlx_png.c	/^  int		color;$/;"	m	struct:png_info_s	file:
@@ -333,6 +335,7 @@ display_log	.mlx/mlx_shaders.c	/^void display_log(GLuint object, void (*param_fu
 e	04012023.vim	/^nnoremap <buffer> <silent> e :call nerdtree#ui_glue#invokeKeyMap("e")$/;"	m
 endian	includes/so_long.h	/^	int		endian;$/;"	m	struct:s_data
 endian	includes/so_long.h	/^	int		endian;$/;"	m	struct:s_img
+ext_img	includes/so_long.h	/^	void	*ext_img[3];$/;"	m	struct:s_data
 f	04012023.vim	/^nnoremap <buffer> <silent> f :call nerdtree#ui_glue#invokeKeyMap("f")$/;"	m
 font	.mlx/mlx_int.h	/^  mlx_img_list_t	*font;$/;"	m	struct:mlx_ptr_s
 font_atlas	.mlx/font.c	/^} font_atlas = {$/;"	v	typeref:struct:__anon1	file:
@@ -354,6 +357,7 @@ ft_countnbr	libft/sources/converts/ft_itoa.c	/^static	int	ft_countnbr(int n)$/;"
 ft_doitoa	libft/sources/converts/ft_itoa.c	/^static	char	*ft_doitoa(int n, char *dest, int counter)$/;"	f	file:
 ft_domall	libft/sources/strings/ft_split.c	/^static char	**ft_domall(char *s, char c, char **dest)$/;"	f	file:
 ft_exit_game	sources/ft_central_game.c	/^int	ft_exit_game(int keycode, t_data *data)$/;"	f
+ft_final_sprite_loading	sources/ft_upload_images.c	/^void	ft_final_sprite_loading(int a, char *path, int ty_sprite, \\$/;"	f
 ft_first_printmap	sources/ft_print_map.c	/^int	ft_first_printmap(t_data *data)$/;"	f
 ft_fitoar	sources/ft_fitoar.c	/^void	ft_fitoar(t_data *data, int fd)$/;"	f
 ft_free	libft/sources/strings/ft_split.c	/^static char	*ft_free(char *dest, char **supdest, int g)$/;"	f	file:
@@ -368,7 +372,7 @@ ft_isdigit	libft/sources/checks/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f
 ft_isprint	libft/sources/checks/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f
 ft_itoa	libft/sources/converts/ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f
 ft_load_images	sources/ft_upload_images.c	/^void	ft_load_images(t_data *data)$/;"	f
-ft_load_more_images	sources/ft_upload_images.c	/^void	ft_load_more_images(t_data *data)$/;"	f
+ft_load_sprites	sources/ft_upload_images.c	/^void	ft_load_sprites(char *img_name, int mem_sprite, int ty_sprite, \\$/;"	f
 ft_lstadd_back	libft/sources/list/ft_lstadd_back_bonus.c	/^void	ft_lstadd_back(t_list **lst, t_list *new)$/;"	f
 ft_lstadd_front	libft/sources/list/ft_lstadd_front_bonus.c	/^void	ft_lstadd_front(t_list **lst, t_list *new)$/;"	f
 ft_lstclear	libft/sources/list/ft_lstclear_bonus.c	/^void	ft_lstclear(t_list **lst, void (*del)(void *))$/;"	f
@@ -383,8 +387,10 @@ ft_memcmp	libft/sources/mem_edit/ft_memcmp.c	/^int	ft_memcmp(const void *s1, con
 ft_memcpy	libft/sources/mem_edit/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f
 ft_memmove	libft/sources/mem_edit/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
 ft_memset	libft/sources/mem_edit/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
+ft_move_right	sources/ft_movements_player.c	/^void	ft_move_right(t_data *data)$/;"	f
 ft_newptr	libft/sources/lines/get_next_line_bonus.c	/^char	*ft_newptr(char *ptr)$/;"	f
 ft_next_game	sources/map.c	/^int	ft_next_game(int keycode, t_data *data)$/;"	f
+ft_path_to_sprite	sources/ft_upload_images.c	/^char	*ft_path_to_sprite(char *img_name, int n)$/;"	f
 ft_pixel_push	sources/ft_pixel_push.c	/^void	ft_pixel_push(t_data *data, int x, int y, int color)$/;"	f
 ft_player_move_left	sources/ft_player_movements.c	/^int	ft_player_move_left(t_data *data)$/;"	f
 ft_player_move_right	sources/ft_player_movements.c	/^int	ft_player_move_right(t_data *data)$/;"	f
@@ -392,7 +398,8 @@ ft_player_stop	sources/ft_animation_player_still.c	/^void	ft_player_stop(t_data 
 ft_player_stop_back	sources/ft_animation_player_still.c	/^void	ft_player_stop_back(t_data *data)$/;"	f
 ft_player_stop_back_second	sources/ft_animation_player_still.c	/^void	ft_player_stop_back_second(t_data *data)$/;"	f
 ft_player_stop_second	sources/ft_animation_player_still.c	/^void	ft_player_stop_second(t_data *data)$/;"	f
-ft_print_player	sources/ft_print_player.c	/^int	ft_print_player(t_data *data)$/;"	f
+ft_print_env	sources/ft_print_player.c	/^int	ft_print_env(t_data *data)$/;"	f
+ft_print_player	sources/ft_print_player.c	/^void	ft_print_player(t_data *data)$/;"	f
 ft_print_player2	sources/ft_print_player.c	/^void	ft_print_player2(t_data *data)$/;"	f
 ft_print_stack	sources/ft_print_stack.c	/^void	ft_print_stack(t_data *t)$/;"	f
 ft_printf	libft/sources/printf/ft_printf.c	/^int	ft_printf(char const *src, ...)$/;"	f
@@ -414,11 +421,9 @@ ft_second_printmap	sources/ft_print_map.c	/^void 	ft_second_printmap(t_data *dat
 ft_split	libft/sources/strings/ft_split.c	/^char	**ft_split(char *s, char c)$/;"	f
 ft_splitter	libft/sources/printf/ft_printf.c	/^static	int	ft_splitter(char const *src, va_list ptr)$/;"	f	file:
 ft_start_game	sources/map.c	/^void	ft_start_game(t_data *data)$/;"	f
-ft_strchr	libft/sources/lines/get_next_line_utils_bonus.c	/^char	*ft_strchr(char *ptr, int n)$/;"	f
 ft_strchr	libft/sources/strings/ft_strchr.c	/^char	*ft_strchr(char *ptr, int n)$/;"	f
 ft_strdup	libft/sources/strings/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f
 ft_striteri	libft/sources/strings/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char*))$/;"	f
-ft_strjoin	libft/sources/lines/get_next_line_utils_bonus.c	/^char	*ft_strjoin(char *ptr, char *buffer)$/;"	f
 ft_strjoin	libft/sources/strings/ft_strjoin.c	/^char	*ft_strjoin(char *ptr, char *buffer)$/;"	f
 ft_strlcat	libft/sources/strings/ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)$/;"	f
 ft_strlcpy	libft/sources/strings/ft_strlcpy.c	/^size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)$/;"	f
@@ -428,7 +433,6 @@ ft_strncmp	libft/sources/strings/ft_strncmp.c	/^int	ft_strncmp(const char *s1, c
 ft_strnstr	libft/sources/strings/ft_strnstr.c	/^char	*ft_strnstr(const char *dst, const char *src, size_t len)$/;"	f
 ft_strrchr	libft/sources/strings/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
 ft_strtrim	libft/sources/strings/ft_strtrim.c	/^char	*ft_strtrim(char *s1, char *set)$/;"	f
-ft_substr	libft/sources/lines/get_next_line_utils_bonus.c	/^char	*ft_substr(char *s, unsigned int start, unsigned int len)$/;"	f
 ft_substr	libft/sources/strings/ft_substr.c	/^char	*ft_substr(char *s, unsigned int start, unsigned int len)$/;"	f
 ft_tolower	libft/sources/converts/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
 ft_toupper	libft/sources/converts/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
@@ -441,6 +445,7 @@ glsl_info_s	.mlx/mlx_int.h	/^typedef struct	glsl_info_s$/;"	s
 glsl_info_t	.mlx/mlx_int.h	/^} glsl_info_t;$/;"	t	typeref:struct:glsl_info_s
 go	04012023.vim	/^nnoremap <buffer> <silent> go :call nerdtree#ui_glue#invokeKeyMap("go")$/;"	m
 gr	04012023.vim	/^nnoremap gr :EasyCompleteReference$/;"	m
+gr_img	includes/so_long.h	/^	void	*gr_img[2];$/;"	m	struct:s_data
 gs	04012023.vim	/^nnoremap <buffer> <silent> gs :call nerdtree#ui_glue#invokeKeyMap("gs")$/;"	m
 gx	04012023.vim	/^nmap gx <Plug>NetrwBrowseX$/;"	m
 height	.mlx/font.c	/^  unsigned int 	 height;$/;"	m	struct:__anon1	file:
@@ -584,6 +589,7 @@ pixel_program	.mlx/mlx_int.h	/^  GLuint	pixel_program;$/;"	m	struct:glsl_info_s
 pixel_vshader	.mlx/mlx_int.h	/^  GLuint	pixel_vshader;$/;"	m	struct:glsl_info_s
 pixmgt	.mlx/mlx_int.h	/^  int			pixmgt;$/;"	m	struct:mlx_win_list_s
 pl	includes/so_long.h	/^	int		pl[2];$/;"	m	struct:s_img
+pl_img	includes/so_long.h	/^	void	*pl_img[17];$/;"	m	struct:s_data
 png_info_s	.mlx/mlx_png.c	/^typedef struct png_info_s$/;"	s	file:
 png_info_s	mlx/mlx_png.c	/^typedef struct png_info_s$/;"	s	file:
 png_info_t	.mlx/mlx_png.c	/^} png_info_t;$/;"	t	typeref:struct:png_info_s	file:
@@ -635,6 +641,7 @@ width	mlx/mlx_png.c	/^  unsigned int	width;$/;"	m	struct:png_info_s	file:
 win	includes/so_long.h	/^	void	*win;$/;"	m	struct:s_data
 win_list	.mlx/mlx_int.h	/^  mlx_win_list_t	*win_list;$/;"	m	struct:mlx_ptr_s
 winid	.mlx/mlx_int.h	/^  void			*winid;$/;"	m	struct:mlx_win_list_s
+wll_img	includes/so_long.h	/^	void	*wll_img[2];$/;"	m	struct:s_data
 x	04012023.vim	/^nnoremap <buffer> <silent> x :call nerdtree#ui_glue#invokeKeyMap("x")$/;"	m
 x	includes/so_long.h	/^	int		x;$/;"	m	struct:s_data
 y	includes/so_long.h	/^	int		y;$/;"	m	struct:s_data

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:58:33 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/04 16:31:28 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/06 00:26:09 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,57 +14,84 @@
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
 
-void	ft_load_images(t_data *data)
+static	char	*ft_path_to_sprite(char *img_name, int n)
 {
-	data->imgs = malloc(sizeof(t_img) * (10));
-	if (!data->imgs)
-		free(data->imgs);
-	data->imgs[0].img = mlx_xpm_file_to_image(data->mlx, \
-			"images/image-12wallgrey2.xpm", &data->img_width, \
-			&data->img_height);
-	data->imgs[0].addr = mlx_get_data_addr(data->imgs[0].img, \
-			&data->imgs[0].bpp, &data->imgs[0].length, &data->imgs[0].endian);
-	data->imgs[1].img = mlx_png_file_to_image(data->mlx, \
-			"images/plstop_noback/player1.png", &data->img_width, \
-			&data->img_height);
-	data->imgs[1].addr = mlx_get_data_addr(data->imgs[1].img, \
-			&data->imgs[1].bpp, &data->imgs[1].length, &data->imgs[1].endian);
-	data->imgs[2].img = mlx_png_file_to_image(data->mlx, \
-			"images/plstop_noback/player2.png", \
-			&data->img_width, &data->img_height);
-	data->imgs[2].addr = mlx_get_data_addr(data->imgs[2].img, \
-			&data->imgs[2].bpp, &data->imgs[2].length, &data->imgs[2].endian);
-	data->imgs[3].img = mlx_xpm_file_to_image(data->mlx, \
-			"images/ground.xpm", &data->img_width, &data->img_height);
-	data->imgs[3].addr = mlx_get_data_addr(data->imgs[3].img, \
-			&data->imgs[3].bpp, &data->imgs[3].length, &data->imgs[3].endian);
-	ft_load_more_images(data);
+	char	*nmbr;
+	char	*str1;
+	char	*str2;
+
+	ft_printf("aqui3\n");
+	nmbr = ft_itoa(n);
+	str1 = ft_strjoin("images/", img_name);
+	str2 = ft_strjoin(str1, "/");
+//	free(str1);
+	str1 = ft_strjoin(str2, img_name);
+//	free(str2);
+ 	str2 = ft_strjoin(str1, nmbr);
+//	str1 = ft_strjoin(str2, nmbr);
+//	free(str2);
+	str1 = ft_strjoin(str2, ".png");
+	ft_printf("n: %d\n", n);
+	ft_printf("nmbr: %s\n", nmbr);
+	ft_printf("str2: %s\n", str1);
+//	exit (0);
+//	free(str1);
+//	free(nmbr);
+	return (str1);
 }
 
-void	ft_load_more_images(t_data *data)
+static	void	ft_final_sprite_loading(int a, char *path, int ty_sprite, \
+		t_data *data)
 {
-	data->imgs[4].img = mlx_xpm_file_to_image(data->mlx, \
-			"images/collectable.xpm", &data->img_width, &data->img_height);
-	data->imgs[4].addr = mlx_get_data_addr(data->imgs[4].img, \
-			&data->imgs[4].bpp, &data->imgs[4].length, &data->imgs[4].endian);
-	data->imgs[5].img = mlx_xpm_file_to_image(data->mlx, \
-			"images/Slice-3door-exit.xpm", &data->img_width, &data->img_height);
-	data->imgs[5].addr = mlx_get_data_addr(data->imgs[5].img, \
-			&data->imgs[5].bpp, &data->imgs[5].length, &data->imgs[5].endian);
-	data->imgs[6].img = mlx_png_file_to_image(data->mlx, \
-			"images/plstop_noback/player3.png", &data->img_width, &data->img_height);
-	data->imgs[6].addr = mlx_get_data_addr(data->imgs[6].img, \
-			&data->imgs[6].bpp, &data->imgs[6].length, &data->imgs[6].endian);
-	data->imgs[7].img = mlx_png_file_to_image(data->mlx, \
-			"images/plstop_noback/player4.png", &data->img_width, &data->img_height);
-	data->imgs[7].addr = mlx_get_data_addr(data->imgs[7].img, \
-			&data->imgs[7].bpp, &data->imgs[7].length, &data->imgs[7].endian);
-	data->imgs[8].img = mlx_png_file_to_image(data->mlx, \
-			"images/plstop_noback/player5.png", &data->img_width, &data->img_height);
-	data->imgs[8].addr = mlx_get_data_addr(data->imgs[8].img, \
-			&data->imgs[8].bpp, &data->imgs[8].length, &data->imgs[8].endian);
-	data->imgs[9].img = mlx_png_file_to_image(data->mlx, \
-			"images/plstop_noback/player6.png", &data->img_width, &data->img_height);
-	data->imgs[9].addr = mlx_get_data_addr(data->imgs[9].img, \
-			&data->imgs[9].bpp, &data->imgs[9].length, &data->imgs[9].endian);
+	int	size;
+
+	size = PXS;
+	ft_printf("a: %d\n", a);
+	if (ty_sprite == 1)
+		data->cll_img[a - 1] = mlx_png_file_to_image(data->mlx, path, &size, \
+				&size);
+//	exit (0);
+	else if (ty_sprite == 2)
+		data->pl_img[a - 1] = mlx_png_file_to_image(data->mlx, path, &size, \
+				&size);
+	else if (ty_sprite == 3)
+		data->gr_img[a - 1] = mlx_png_file_to_image(data->mlx, path, &size, \
+				&size);
+	else if (ty_sprite == 4)
+		data->wll_img[a - 1] = mlx_png_file_to_image(data->mlx, path, &size, \
+				&size);
+	else if (ty_sprite == 5)
+		data->ext_img[a - 1] = mlx_png_file_to_image(data->mlx, path, &size, \
+				&size);
+}
+	
+static	void	ft_load_sprites(char *img_name, int mem_sprite, int ty_sprite, \
+		t_data *data)
+{
+	int		i;
+	char	*path;
+	int		fd;
+
+	i = 0;
+	ft_printf("aqui2\n");
+	while (i++ < mem_sprite)
+	{
+		path = ft_path_to_sprite(img_name, i - 1);
+		fd = open(path, O_RDONLY);
+		if (fd < 0)
+			ft_putstr_error("Error Image not found\n");
+		close (fd);
+		ft_final_sprite_loading(i, path, ty_sprite, data);
+		free(path);
+	}
+}
+
+void	ft_load_images(t_data *data)
+{
+	ft_printf("aqui1\n");
+	ft_load_sprites("cll", 6, 1, data);
+	ft_load_sprites("player", 17, 2, data);
+	ft_load_sprites("ground", 2, 3, data);
+	ft_load_sprites("wallgrey", 2, 4, data);
+	ft_load_sprites("exit", 3, 5, data);
 }
