@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/06 00:25:47 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/06 19:58:25 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ int	main(int argc, char **argv)
 	t_data	data;
 	int		fd;
 
-	data.step = 0;
 	if (argc == 1)
 		return (0);
 	fd = open(argv[1], O_RDONLY);
+//	data = malloc(sizeof (t_data));
+//	if (!data)
+//		exit (EXIT_FAILURE);
 	ft_get_size_map(&data, fd, argv);
+	data.step = 0;
 	ft_fitoar(&data, fd);
 //	ft_get_player_position(&data);
 //	ft_print_stack(&data);
@@ -31,8 +34,7 @@ int	main(int argc, char **argv)
 	ft_check_errors(&data);
 //	data.mlx = mlx_init();
 	ft_start_game(&data);
-	data.x = 0;
-	data.y = 0;
+//	exit (0);
 //	mlx_hook(data.win, 2, 0, ft_next_game, &data);
 //	mlx_hook(data.win, 17, 0, (void *)exit, 0);
 //	mlx_loop_hook(data.mlx, ft_wait_time, &data);

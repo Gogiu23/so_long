@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:11:50 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/05 23:43:38 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/06 19:33:23 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_print_player(t_data *data)
 	move = data->imgs;
 	mlx_clear_window(data->mlx, data->win);
 	ft_first_printmap(data);
+//	exit (0);
 	if (data->x > 2)
 		ft_print_player2(data);
 	else if (data->x == 0)
