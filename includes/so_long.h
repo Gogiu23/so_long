@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/05 22:08:39 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/06 22:07:07 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ typedef struct	s_img {
  * wll_img = wall image
  * ext_img = exit image
  * cll_img = collectable image
+ * c = collectable position
+ * m = movement animation;
  */
 
 typedef struct s_data {
@@ -63,6 +65,8 @@ typedef struct s_data {
 	void	*cll_img[6];
 	int		a;
 	int		b;
+	int		c;
+	int		m;
 	int		x;
 	int		y;
 	int		img_width;
@@ -95,21 +99,20 @@ void	ft_print_stack(t_data *t);
 int		ft_next_game(int keycode, t_data *data);
 void	ft_after_loading(t_data *data);
 
-
-void	ft_load_images(t_data *data);
-void	ft_load_more_images(t_data *data);
+//FUNCTIONS PRINTS
 int		ft_print_env(t_data *data);
 int		ft_first_printmap(t_data *data);
 void 	ft_second_printmap(t_data *data);
+void	ft_print_collectable(t_data *data);
+
+//FUNCTION LOADING IMAGES
+void	ft_load_images(t_data *data);
+void	ft_load_more_images(t_data *data);
 int		ft_wait_time(t_data *data);
 
 //player movement in situ
 void	ft_print_player(t_data *data);
 void	ft_print_player2(t_data *data);
-void 	ft_player_stop(t_data *data);
-void	ft_player_stop_second(t_data *data);
-void	ft_player_stop_back(t_data *data);
-void	ft_player_stop_back_second(t_data *data);
 
 
 // Fucntion to exit the game without leaks //
@@ -125,5 +128,6 @@ int		ft_wait_time2(t_data *data);
 int		ft_wait_time3(t_data *data);
 
 void	ft_move_right(t_data *data);
+void	ft_move_right2(t_data *data);
 
 #endif

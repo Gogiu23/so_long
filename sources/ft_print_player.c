@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:11:50 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/06 19:33:23 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/06 22:11:16 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 int	ft_print_env(t_data *data)
 {
+//	ft_first_printmap(data);
+//	ft_print_collectable(data);
+	if (data->c == 5)
+		data->c = 0;
+	else
+		data->c++;
 	if (data->y > 0)
 	{
 //		mlx_clear_window(data->mlx, data->win);
@@ -26,7 +32,7 @@ int	ft_print_env(t_data *data)
 	}
 	else
 		ft_print_player(data);
-	usleep(50000);
+	usleep(70000);
 	return (0);
 }
 
@@ -111,5 +117,27 @@ void	ft_print_player2(t_data *data)
 		data->x = 0;
 		//usleep(60000);
 		return ;
+	}
+}
+
+void	ft_print_collectable(t_data *data)
+{
+	int	a;
+	int	b;
+
+	a = 0;
+	while (data->matrix[a])
+	{
+		b = 0;
+		while (data->matrix[a][b])
+		{
+			if (data->matrix[a][b] == 'C' && data->c < 5) 
+			{
+				mlx_put_image_to_window(data->mlx, data->win, \
+						data->cll_img[data->c], a * 50, b * 50);
+			}
+			b++;
+		}
+		a++;
 	}
 }

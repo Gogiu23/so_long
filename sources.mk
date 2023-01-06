@@ -1,4 +1,3 @@
-SOURCES += sources/ft_animation_player_still.c
 SOURCES += sources/ft_central_game.c
 SOURCES += sources/ft_check_errors.c
 SOURCES += sources/ft_fitoar.c
