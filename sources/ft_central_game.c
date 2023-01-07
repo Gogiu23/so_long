@@ -6,13 +6,24 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/07 18:14:38 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/07 20:54:06 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
+
+int	ft_print_env(t_data *data)
+{
+	mlx_clear_window(data->mlx, data->win);
+	ft_print_wall(data);
+	ft_print_background(data);
+	ft_print_exit(data);
+	ft_print_collectable(data);
+	ft_print_player(data);
+	return (1);
+}
 
 void	ft_after_loading(t_data *data)
 {

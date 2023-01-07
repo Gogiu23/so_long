@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/07 19:35:24 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/07 21:03:57 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,8 @@ void	ft_print_wall(t_data *data);
 void	ft_print_background(t_data *data);
 void	ft_print_exit(t_data *data);
 void	ft_print_collectable(t_data *data);
+void	ft_print_player(t_data *data);
+
 
 void	ft_put_img(t_data *data, void *img, int a, int b);
 
@@ -116,7 +118,6 @@ void	ft_load_more_images(t_data *data);
 int		ft_wait_time(t_data *data);
 
 //player movement in situ
-void	ft_print_player(t_data *data);
 void	ft_print_player2(t_data *data);
 
 
