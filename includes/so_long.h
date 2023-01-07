@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/06 22:07:07 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/07 19:35:24 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include <unistd.h>
+# include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <sys/types.h>
@@ -23,6 +24,9 @@
 /*
  * PXS = pixel size
  */
+# define WINDOW_WIDTH 1325
+# define WINDOW_HEIGHT 600
+
 # define PXS 50
 
 //pl = player position in the map[1] = X, [2] = Y
@@ -63,8 +67,6 @@ typedef struct s_data {
 	void	*wll_img[2];
 	void	*ext_img[3];
 	void	*cll_img[6];
-	int		a;
-	int		b;
 	int		c;
 	int		m;
 	int		x;
@@ -101,9 +103,12 @@ void	ft_after_loading(t_data *data);
 
 //FUNCTIONS PRINTS
 int		ft_print_env(t_data *data);
-int		ft_first_printmap(t_data *data);
-void 	ft_second_printmap(t_data *data);
+void	ft_print_wall(t_data *data);
+void	ft_print_background(t_data *data);
+void	ft_print_exit(t_data *data);
 void	ft_print_collectable(t_data *data);
+
+void	ft_put_img(t_data *data, void *img, int a, int b);
 
 //FUNCTION LOADING IMAGES
 void	ft_load_images(t_data *data);

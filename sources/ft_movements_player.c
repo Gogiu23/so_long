@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 03:40:37 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/06 22:10:12 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:02:49 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_move_right(t_data *data)
 
 	move = data->imgs;
 	mlx_clear_window(data->mlx, data->win);
-	ft_first_printmap(data);
 	if (data->m > 2)
 		ft_move_right2(data);
 	else if (data->m == 0)

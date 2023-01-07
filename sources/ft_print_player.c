@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:11:50 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/06 22:11:16 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/07 19:47:34 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,12 @@
 
 int	ft_print_env(t_data *data)
 {
-//	ft_first_printmap(data);
-//	ft_print_collectable(data);
-	if (data->c == 5)
-		data->c = 0;
-	else
-		data->c++;
-	if (data->y > 0)
-	{
-//		mlx_clear_window(data->mlx, data->win);
-//		ft_first_printmap(data);
-//		ft_print_player(data);
-//		usleep(50000);
-		data->y = 0;
-	}
-	else
-		ft_print_player(data);
-	usleep(70000);
-	return (0);
+	mlx_clear_window(data->mlx, data->win);
+	ft_print_wall(data);
+	ft_print_background(data);
+	ft_print_exit(data);
+	ft_print_collectable(data);
+	return (1);
 }
 
 void	ft_print_player(t_data *data)
@@ -42,7 +30,6 @@ void	ft_print_player(t_data *data)
 
 	move = data->imgs;
 	mlx_clear_window(data->mlx, data->win);
-	ft_first_printmap(data);
 //	exit (0);
 	if (data->x > 2)
 		ft_print_player2(data);
@@ -117,27 +104,5 @@ void	ft_print_player2(t_data *data)
 		data->x = 0;
 		//usleep(60000);
 		return ;
-	}
-}
-
-void	ft_print_collectable(t_data *data)
-{
-	int	a;
-	int	b;
-
-	a = 0;
-	while (data->matrix[a])
-	{
-		b = 0;
-		while (data->matrix[a][b])
-		{
-			if (data->matrix[a][b] == 'C' && data->c < 5) 
-			{
-				mlx_put_image_to_window(data->mlx, data->win, \
-						data->cll_img[data->c], a * 50, b * 50);
-			}
-			b++;
-		}
-		a++;
 	}
 }
