@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 15:50:24 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:53:01 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,19 @@
 //MAKROS FOR THE GAME
 /*
  * PXS = pixel size
+ * MVM = movement pixels
+ * JMPX = jump pixels
+ * HTX = hitbox pixels
+ * ETX = extra hitbox
  */
 # define WINDOW_WIDTH 1325
 # define WINDOW_HEIGHT 600
 
 # define PXS 50
 # define MVM 8
-# define HTX 15
-# define ETX 25
+# define JMPX 10
+# define HTX 1
+# define ETX 5
 
 /*pl = player position in the map[1] = X, [2] = Y
  * tr = top right	[1] = x	[2] = y;
@@ -139,18 +144,19 @@ int		ft_left_collision(t_data *data);
 
 // Fucntion to exit the game without leaks //
 int		ft_exit_game(int keycode, t_data *data);
+int		ft_clean_hook(int keycode, t_data *data);
 
 //Player movements
+void	ft_player_jump(t_data *data);
 void	ft_player_move_horitzontal(t_data *data);
-
-int		ft_wait_time2(t_data *data);
-int		ft_wait_time3(t_data *data);
 
 void	ft_move_right(t_data *data);
 void	ft_move_right2(t_data *data);
 
 //RECORDING ACTIONS
+int		ft_generate_actions(int keycode, t_data *data);
 int		ft_return_action(int keycode);
 void	ft_call_action(int keycode, t_data *data);
+void	ft_reset_action(int keycode, t_data *data);
 
 #endif

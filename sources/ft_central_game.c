@@ -6,13 +6,28 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 14:51:12 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:26:55 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include "../libft/includes/libft.h"
 #include "../mlx/mlx.h"
+
+int	ft_generate_actions(int keycode, t_data *data)
+{
+	ft_call_action(keycode, data);
+	return (0);
+}
+
+int	ft_clean_hook(int keycode, t_data *data)
+{
+	if (keycode != 53)
+		ft_reset_action(keycode, data);
+	else
+		ft_exit_game(0, data);
+	return (0);
+}
 
 int	ft_print_env(t_data *data)
 {
@@ -37,21 +52,9 @@ void	ft_after_loading(t_data *data)
 			(data->map_height * 50), "7EVEN SWORDS");
 	data->img = mlx_new_image(data->mlx, (data->map_width * 50), \
 			(data->map_height * 50));
-	mlx_hook(data->win, 2, 0, ft_exit_game, data);
 	mlx_hook(data->win, 17, 1L << 0, (void *)exit, 0);
+	mlx_hook(data->win, 2, 0, ft_generate_actions, data);
+	mlx_key_hook(data->win, ft_clean_hook, data);
 	mlx_loop_hook(data->mlx, ft_print_env, data);
 	mlx_loop(data->mlx);
-}
-
-int	ft_exit_game(int keycode, t_data *data)
-{
-	if (keycode == 53)
-	{
-		ft_free_stacks_t(data);
-		mlx_destroy_window(data->mlx, data->win);
-		exit (EXIT_SUCCESS);
-	}
-	else
-		ft_call_action(keycode, data);
-	return (0);
 }

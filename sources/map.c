@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 05:10:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/08 22:41:17 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:33:44 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_get_player_position(t_data *data)
 		{
 			if (data->matrix[a][b] == 'P')
 			{
-				data->imgs = malloc(sizeof (t_img));
+				data->imgs = ft_calloc((sizeof (t_img) * 1), 1);
 				data->imgs->pl[0] = (a * 50);
 				data->imgs->pl[1] = (b * 50) - 1;
 				return (1);

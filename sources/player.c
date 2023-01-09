@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 21:05:27 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 15:29:34 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:44:09 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	*ft_get_pl(t_data *data)
 {
 	static	int	nr;
 
-	if (data->imgs->lpl[1] - data->imgs->pl[1] < 0)
+	if (data->imgs->acm[0] == 2)
 	{
 		if (nr < 15 && nr > 5)
 			nr++;
@@ -55,9 +55,7 @@ static	void	ft_search_player(t_data *data)
 
 void	ft_print_player(t_data *data)
 {
-	data->imgs->lpl[0] = data->imgs->pl[0];
-	data->imgs->lpl[1] = data->imgs->pl[1];
 	ft_player_move_horitzontal(data);
+	ft_player_jump(data);
 	ft_search_player(data);
-//	usleep(5000);
 }
