@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/08 22:26:55 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:50:24 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,28 @@
 # define WINDOW_HEIGHT 600
 
 # define PXS 50
+# define MVM 8
+# define HTX 15
+# define ETX 25
 
-//pl = player position in the map[1] = X, [2] = Y
+/*pl = player position in the map[1] = X, [2] = Y
+ * tr = top right	[1] = x	[2] = y;
+ * tl = top left	[1] = x	[2] = y;
+ * br = below right	[1] = x	[2] = y;
+ * bl = below left	[1] = x	[2] = y;
+ * direction -> 0 = LEFT	1 = RIGHT
+ */
 typedef struct	s_img {
 	void	*img;
 	char	*addr;
 	int		lpl[2];
 	int		pl[2];
-	int		bpp;
-	int		length;
-	int		endian;
+	int		tr[2];
+	int		tl[2];
+	int		br[2];
+	int		bl[2];
+	int		acm[3];
+	int		direction;
 }	t_img;
 
 /*
@@ -120,21 +132,25 @@ int		ft_wait_time(t_data *data);
 
 //player movement in situ
 void	ft_print_player2(t_data *data);
+void	ft_get_player_dimension(t_data *data);
+int		ft_right_collision(t_data *data);
+int		ft_left_collision(t_data *data);
 
 
 // Fucntion to exit the game without leaks //
 int		ft_exit_game(int keycode, t_data *data);
 
 //Player movements
-int		ft_player_move_right(t_data *data);
-int		ft_player_move_left(t_data *data);
-int		ft_player_move_up(t_data *data);
-int		ft_player_move_down(t_data *data);
+void	ft_player_move_horitzontal(t_data *data);
 
 int		ft_wait_time2(t_data *data);
 int		ft_wait_time3(t_data *data);
 
 void	ft_move_right(t_data *data);
 void	ft_move_right2(t_data *data);
+
+//RECORDING ACTIONS
+int		ft_return_action(int keycode);
+void	ft_call_action(int keycode, t_data *data);
 
 #endif

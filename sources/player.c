@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 21:05:27 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/08 22:47:58 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:29:34 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int	*ft_get_pl(t_data *data)
 		if (nr < 15 && nr > 5)
 			nr++;
 		else
-		{
 			nr = 6;
-			data->imgs->lpl[1] = data->imgs->pl[1];
-		}
 		return (data->pl_img[nr]);
 	}
 	else
@@ -58,6 +55,9 @@ static	void	ft_search_player(t_data *data)
 
 void	ft_print_player(t_data *data)
 {
+	data->imgs->lpl[0] = data->imgs->pl[0];
+	data->imgs->lpl[1] = data->imgs->pl[1];
+	ft_player_move_horitzontal(data);
 	ft_search_player(data);
 //	usleep(5000);
 }

@@ -1,42 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_player_movements.c                              :+:      :+:    :+:   */
+/*   ft_player_movement.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/30 04:29:09 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/08 22:41:51 by gdominic         ###   ########.fr       */
+/*   Created: 2023/01/09 15:16:07 by gdominic          #+#    #+#             */
+/*   Updated: 2023/01/09 15:52:43 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-#include "../libft/includes/libft.h"
-#include "../mlx/mlx.h"
 
-int	ft_player_move_right(t_data *data)
+void	ft_player_move_horitzontal(t_data *data)
 {
-	data->imgs->pl[1] += 8;
-//	ft_move_right(data);
-//	data->y++;
-	return (0);
-}
+	t_img	*mov;
 
-int	ft_player_move_left(t_data *data)
-{
-	data->imgs->pl[1] -= 8;
-	data->y++;
-	return (0);
+	mov = data->imgs;
+	if (mov->acm[0] == 1)
+		mov->pl[0] += ft_right_collision(data);
+	else if (mov->acm[0] == 2)
+		mov->pl[0] -= ft_left_collision(data);
 }
-
-//int	ft_player_move_up(t_data *data)
-//{
-//
-//	return (0);
-//}
-//
-//int	ft_player_move_down(t_data *data)
-//{
-//
-//	return (0);
-//}

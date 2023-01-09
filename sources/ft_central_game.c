@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/08 22:49:08 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:51:12 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 int	ft_print_env(t_data *data)
 {
 	mlx_clear_window(data->mlx, data->win);
+	ft_get_player_dimension(data);
 	ft_print_wall(data);
 	ft_print_background(data);
 	ft_print_exit(data);
@@ -50,13 +51,7 @@ int	ft_exit_game(int keycode, t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 		exit (EXIT_SUCCESS);
 	}
-	else if (keycode == 2 || keycode == 124)
-		ft_player_move_right(data);
-	else if (keycode == 0 || keycode == 123)
-		ft_player_move_left(data);
-//	else if (keycode == 13 || keycode == 126)
-//		ft_player_move_up(data);
-//	else if (keycode == 1 || keycode == 125)
-//		ft_player_move_down(data);
+	else
+		ft_call_action(keycode, data);
 	return (0);
 }
