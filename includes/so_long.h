@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/07 21:03:57 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/08 22:26:55 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 typedef struct	s_img {
 	void	*img;
 	char	*addr;
+	int		lpl[2];
 	int		pl[2];
 	int		bpp;
 	int		length;
