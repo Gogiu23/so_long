@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 05:10:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 19:33:44 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:14:50 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_start_game(t_data *data)
 	data->pic = mlx_png_file_to_image(data->mlx, \
 			"images/start_game/start_page.png", \
 			&data->img_width, &data->img_height);
-	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
-			&data->line_length, &data->endian);
+//	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
+//			&data->line_length, &data->endian);
 	mlx_put_image_to_window(data->mlx, data->win, data->pic, data->x, data->y);
 	mlx_hook(data->win, 2, 0, ft_next_game, data);
 	mlx_hook(data->win, 17, 0, (void *)exit, 0);
@@ -46,8 +46,8 @@ int	ft_get_player_position(t_data *data)
 			if (data->matrix[a][b] == 'P')
 			{
 				data->imgs = ft_calloc((sizeof (t_img) * 1), 1);
-				data->imgs->pl[0] = (a * 50);
-				data->imgs->pl[1] = (b * 50) - 1;
+				data->imgs->pl[0] = b * PXS;
+				data->imgs->pl[1] = a * PXS - 1;
 				return (1);
 			}
 			b++;

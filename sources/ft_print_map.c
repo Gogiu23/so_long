@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:57:25 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/07 19:05:58 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:07:26 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_print_wall(t_data *data)
 		}
 		a++;
 	}
-	mlx_string_put(data->mlx, data->win, 10, 10, 0xFF4550, "Esc = exit game");
+	mlx_string_put(data->mlx, data->win, 20, 20, 0xFF4550, "Esc = exit game");
 }
 
 void	ft_print_background(t_data *data)

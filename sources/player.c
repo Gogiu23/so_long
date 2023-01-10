@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 21:05:27 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 23:58:53 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/10 22:03:45 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,13 @@ int	*ft_get_pl(t_data *data)
 
 static	void	ft_search_player(t_data *data)
 {
-	int	a;
-	int	b;
-
-	a = 0;
-	while (data->matrix[a])
-	{
-		b = 0;
-		while (data->matrix[a][b])
-		{
-			if (data->matrix[a][b] == 'P')
-				ft_put_img(data, ft_get_pl(data), data->imgs->pl[1], \
-						data->imgs->pl[0]);
-			b++;
-		}
-		a++;
-	}
+	ft_put_img(data, ft_get_pl(data), data->imgs->pl[0], data->imgs->pl[1]);
 }
 
 void	ft_print_player(t_data *data)
 {
 	ft_player_move_horitzontal(data);
+	ft_player_gravity(data);
 	ft_player_jump(data);
 	ft_search_player(data);
 }

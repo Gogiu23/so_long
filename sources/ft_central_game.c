@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 23:01:18 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/10 20:28:23 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ft_after_loading(t_data *data)
 {
 	mlx_destroy_image(data->mlx, data->img);
 	mlx_destroy_window(data->mlx, data->win);
+//	data->imgs->velocity = 0;
 	data->mlx = mlx_init();
 	ft_get_player_position(data);
 	ft_load_images(data);

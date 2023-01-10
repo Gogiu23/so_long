@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:33:13 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 19:58:42 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/10 21:06:11 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ void	ft_get_player_dimension(t_data *data)
 
 	zone = data->imgs;
 	zone->tl[0] = zone->pl[0];
-	printf("zone->tl[0]: %d\n", zone->tl[0]);
-	printf("zone->tl[1]: %d\n", zone->tl[1]);
-//	exit (0);
 	zone->tl[1] = zone->pl[1];
 	zone->tr[0] = zone->tl[0];
 	zone->tr[1] = zone->tl[1] + PXS;

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 22:12:45 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/10 20:27:29 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,17 @@
  * JMPX = jump pixels
  * HTX = hitbox pixels
  * ETX = extra hitbox
+ * GVX = gravity pixels
  */
 # define WINDOW_WIDTH 1325
 # define WINDOW_HEIGHT 600
 
 # define PXS 50
 # define MVM 8
-# define JMPX 10
-# define HTX 1
-# define ETX 5
+# define JMPX 4
+# define GVX 2
+# define HTX 10
+# define ETX 25
 
 /*pl = player position in the map[1] = X, [2] = Y
  * tr = top right	[1] = x	[2] = y;
@@ -57,6 +59,7 @@ typedef struct	s_img {
 	int		acm[3];
 	int		sp;
 	int		direction;
+	int		jumping;
 }	t_img;
 
 /*
@@ -95,6 +98,7 @@ typedef struct s_data {
 	int		img_height;
 	int		time;
 	int		step;
+	int		velocity;
 	t_img	*imgs;
 }	t_data;
 	
@@ -144,6 +148,7 @@ void	ft_print_player2(t_data *data);
 void	ft_get_player_dimension(t_data *data);
 int		ft_right_collision(t_data *data);
 int		ft_left_collision(t_data *data);
+int		ft_top_collision(t_data *data);
 
 
 // Fucntion to exit the game without leaks //
@@ -152,6 +157,7 @@ int		ft_clean_hook(int keycode, t_data *data);
 
 //Player movements
 void	ft_player_jump(t_data *data);
+void	ft_player_gravity(t_data *data);
 void	ft_player_move_horitzontal(t_data *data);
 
 void	ft_move_right(t_data *data);
