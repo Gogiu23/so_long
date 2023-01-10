@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/06 22:06:02 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/10 01:58:50 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 //	ft_get_player_position(&data);
 //	ft_print_stack(&data);
 //	ft_load_images(&data);
-	ft_check_errors(&data);
+//	ft_check_errors(&data);
 //	data.mlx = mlx_init();
 	ft_start_game(&data);
 //	exit (0);

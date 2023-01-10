@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:58:33 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/07 19:37:37 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 23:55:14 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ static	char	*ft_path_to_sprite(char *img_name, int n)
 //	str1 = ft_strjoin(str2, nmbr);
 //	free(str2);
 	str1 = ft_strjoin(str2, ".png");
-//	exit (0);
 //	free(str1);
 //	free(nmbr);
 	return (str1);
@@ -83,7 +82,7 @@ static	void	ft_load_sprites(char *img_name, int mem_sprite, int ty_sprite, \
 void	ft_load_images(t_data *data)
 {
 	ft_load_sprites("cll", 5, 1, data);
-	ft_load_sprites("player", 16, 2, data);
+	ft_load_sprites("player", 31, 2, data);
 	ft_load_sprites("ground", 1, 3, data);
 	ft_load_sprites("wallgrey", 1, 4, data);
 	ft_load_sprites("exit", 2, 5, data);

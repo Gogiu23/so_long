@@ -5,6 +5,7 @@ SOURCES += sources/ft_fitoar.c
 SOURCES += sources/ft_free_memory.c
 SOURCES += sources/ft_get_action.c
 SOURCES += sources/ft_get_collision_player.c
+SOURCES += sources/ft_get_sprite_player.c
 SOURCES += sources/ft_map_handler.c
 SOURCES += sources/ft_pixel_push.c
 SOURCES += sources/ft_player_dimension.c

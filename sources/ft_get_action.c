@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:32:52 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 19:35:07 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 23:52:35 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,9 @@ void	ft_call_action(int keycode, t_data *data)
 	else
 		action->acm[2] = ft_return_action(keycode);
 	if (action->acm[0] == 1 || action->acm[1] == 1)
-		action->direction = 0;
-	if (action->acm[0] == 2 || action->acm[1] == 2)
 		action->direction = 1;
-	ft_printf("action->acm: %d\n", action->acm[0]);
-//	exit (0);
+	if (action->acm[0] == 2 || action->acm[1] == 2)
+		action->direction = 0;
 }
 
 void	ft_reset_action(int keycode, t_data *data)

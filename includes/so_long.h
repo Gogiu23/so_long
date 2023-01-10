@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 19:53:01 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/09 22:12:45 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@
  * br = below right	[1] = x	[2] = y;
  * bl = below left	[1] = x	[2] = y;
  * direction -> 0 = LEFT	1 = RIGHT
+ * sp = sprite number
  */
 typedef struct	s_img {
 	void	*img;
@@ -54,6 +55,7 @@ typedef struct	s_img {
 	int		br[2];
 	int		bl[2];
 	int		acm[3];
+	int		sp;
 	int		direction;
 }	t_img;
 
@@ -80,7 +82,7 @@ typedef struct s_data {
 	int		endian;
 	char	**matrix;
 	char	*pic;
-	void	*pl_img[17];
+	void	*pl_img[32];
 	void	*gr_img[2];
 	void	*wll_img[2];
 	void	*ext_img[3];
@@ -129,6 +131,8 @@ void	ft_print_player(t_data *data);
 
 
 void	ft_put_img(t_data *data, void *img, int a, int b);
+int		ft_get_sprite_left(t_data *data);
+int		ft_get_sprite_right(t_data *data);
 
 //FUNCTION LOADING IMAGES
 void	ft_load_images(t_data *data);
