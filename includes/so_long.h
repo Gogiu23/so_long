@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/10 20:27:29 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/12 10:19:47 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@
 
 # define PXS 50
 # define MVM 8
-# define JMPX 4
-# define GVX 2
-# define HTX 10
+# define JMPX 33
+# define GVX 4
+# define HTX 15
 # define ETX 25
 
 /*pl = player position in the map[1] = X, [2] = Y
@@ -60,6 +60,7 @@ typedef struct	s_img {
 	int		sp;
 	int		direction;
 	int		jumping;
+	int		velocity;
 }	t_img;
 
 /*
@@ -98,7 +99,6 @@ typedef struct s_data {
 	int		img_height;
 	int		time;
 	int		step;
-	int		velocity;
 	t_img	*imgs;
 }	t_data;
 	
@@ -148,6 +148,7 @@ void	ft_print_player2(t_data *data);
 void	ft_get_player_dimension(t_data *data);
 int		ft_right_collision(t_data *data);
 int		ft_left_collision(t_data *data);
+int		ft_down_collision(t_data *data);
 int		ft_top_collision(t_data *data);
 
 

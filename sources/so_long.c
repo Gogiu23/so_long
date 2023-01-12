@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:00:14 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/10 20:30:31 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/11 00:36:43 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	ft_fitoar(&data, fd);
 	data.c = 0;
 	data.c = 0;
-	data.velocity = 0;
+//	data.velocity = 0;
 //	ft_get_player_position(&data);
 //	ft_print_stack(&data);
 //	ft_load_images(&data);
