@@ -6,29 +6,31 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 21:05:27 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/10 22:03:45 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 16:09:51 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include "../mlx/mlx.h"
+#include "../libft/includes/libft.h"
 
 int	*ft_get_pl(t_data *data)
 {
 	t_img	*split;
 
 	split = data->imgs;
-	if (split->direction == 0)
+	if (split->jumping == 0)
 	{
-		ft_get_sprite_right(data);
-		return (data->pl_img[split->sp]);
+		if (split->direction == 0)
+			ft_get_sprite_right(data);
+		else 
+			ft_get_sprite_left(data);
 	}
-	else
-	{
-		ft_get_sprite_left(data);
-		return (data->pl_img[split->sp]);
-	}
-	return (0);
+	else if (split->jumping != 0 || split->velocity > 0)
+		ft_get_sprite_jump(data);
+	if (ft_down_collision(data) != 0)
+		ft_get_sprite_jump(data);
+	return (data->pl_img[split->sp]);
 }
 
 static	void	ft_search_player(t_data *data)

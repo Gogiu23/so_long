@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:25:32 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/12 10:18:15 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 17:53:41 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int	ft_top_collision(t_data *data)
 	if (map[(jump->tl[1] + 1) / PXS -1][(jump->tl[0] + HTX) / PXS] == '1' ||
 	map[(jump->bl[1] + 1) / PXS - 1][(jump->tl[0] - HTX) / PXS] == '1')
 	{
+		jump->deceleration = 0;
 		distance = jump->tr[1] - (PXS * ((jump->tr[1] + 1) / PXS)) - 1 + 2;
 		if (distance > JMPX)
 			return (JMPX);
@@ -100,6 +101,9 @@ int	ft_top_collision(t_data *data)
 	}
 	if (map[(jump->tl[1]) / PXS][(jump->tl[0] + HTX) / PXS] == '1' ||
 	map[(jump->bl[1]) / PXS][(jump->bl[0] - HTX) / PXS] == '1')
+	{
+		jump->deceleration = 0;
 		return (-(HTX));
+	}
 	return (JMPX);
 }

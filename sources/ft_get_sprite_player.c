@@ -6,11 +6,12 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 21:43:07 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 23:59:22 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 17:53:41 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+#include "../libft/includes/libft.h"
 
 int	ft_get_sprite_right(t_data *data)
 {
@@ -51,5 +52,17 @@ int	ft_get_sprite_left(t_data *data)
 			sprite->sp++;
 		else
 			sprite->sp = 16;
+	return (sprite->sp);
+}
+
+int	ft_get_sprite_jump(t_data *data)
+{
+	t_img	*sprite;
+
+	sprite = data->imgs;
+	if (sprite->direction == 0)
+		sprite->sp = 32;
+	else
+		sprite->sp = 33;
 	return (sprite->sp);
 }

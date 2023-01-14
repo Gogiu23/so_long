@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:16:07 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/12 10:15:18 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 15:40:09 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_player_jump(t_data *data)
 	{
 		jump->pl[1] -= ft_top_collision(data);
 		jump->jumping--;
+		usleep(6000);
 	}
 }
 
@@ -44,11 +45,11 @@ void	ft_player_gravity(t_data *data)
 	t_img	*gravity;
 
 	gravity = data->imgs;
-	ft_printf("data->matrix: %c\n", data->matrix[(gravity->tr[1]) / PXS +1][(gravity->tr[0] + HTX) / PXS]);
-	ft_printf("gravity->tr[1]/PSX + 1: %d\n", (gravity->tr[1])/PXS+1);
-	ft_printf("gravity->tr[0] + HTX / PXS: %d\n", (gravity->tr[0] + HTX) / PXS);
-	ft_printf("tl[x]: %d\ttl[y]: %d\n", gravity->tl[0], gravity->tl[1]);
-	ft_printf("tr[x]: %d\ttr[y]: %d\n", gravity->tr[0], gravity->tr[1]);
+//	ft_printf("data->matrix: %c\n", data->matrix[(gravity->tr[1]) / PXS +1][(gravity->tr[0] + HTX) / PXS]);
+//	ft_printf("gravity->tr[1]/PSX + 1: %d\n", (gravity->tr[1])/PXS+1);
+//	ft_printf("gravity->tr[0] + HTX / PXS: %d\n", (gravity->tr[0] + HTX) / PXS);
+//	ft_printf("tl[x]: %d\ttl[y]: %d\n", gravity->tl[0], gravity->tl[1]);
+//	ft_printf("tr[x]: %d\ttr[y]: %d\n", gravity->tr[0], gravity->tr[1]);
 	if (gravity->acm[0] != 4 && gravity->jumping == 0)
 		gravity->pl[1] += ft_down_collision(data);
 }

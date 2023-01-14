@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:58:33 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/09 23:55:14 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 15:46:22 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static	void	ft_load_sprites(char *img_name, int mem_sprite, int ty_sprite, \
 void	ft_load_images(t_data *data)
 {
 	ft_load_sprites("cll", 5, 1, data);
-	ft_load_sprites("player", 31, 2, data);
+	ft_load_sprites("player", 34, 2, data);
 	ft_load_sprites("ground", 1, 3, data);
 	ft_load_sprites("wallgrey", 1, 4, data);
 	ft_load_sprites("exit", 2, 5, data);

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 20:12:02 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/31 06:31:15 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 20:03:00 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ void	ft_fitoar(t_data *data, int fd)
 
 	i = 0;
 	data->map = get_next_line(fd);
-	data->matrix = (char **)malloc(sizeof(char *) * data->map_height - 1);
+	data->matrix = (char **)malloc(sizeof(char *) * data->map_height);
 	if (!data->matrix)
-		exit (0);
+		exit (EXIT_FAILURE);
 	while (data->map)
 	{
 		nbr = 0;
 		data->matrix[i] = (char *)malloc(sizeof(char) * ft_strlen(data->map));
+		if (!data->matrix[i])
+			exit (EXIT_FAILURE);
 		while (data->map[nbr])
 		{
 			data->matrix[i][nbr] = data->map[nbr];
@@ -40,5 +42,4 @@ void	ft_fitoar(t_data *data, int fd)
 	}
 	data->matrix[i] = NULL;
 	close(fd);
-//	ft_get_player_position(data);
 }

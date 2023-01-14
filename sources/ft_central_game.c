@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/10 20:28:23 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 19:56:15 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,15 @@ void	ft_after_loading(t_data *data)
 {
 	mlx_destroy_image(data->mlx, data->img);
 	mlx_destroy_window(data->mlx, data->win);
-//	data->imgs->velocity = 0;
 	data->mlx = mlx_init();
 	ft_get_player_position(data);
 	ft_load_images(data);
-	data->win = mlx_new_window(data->mlx, (data->map_width * 50), \
-			(data->map_height * 50), "7EVEN SWORDS");
-	data->img = mlx_new_image(data->mlx, (data->map_width * 50), \
-			(data->map_height * 50));
+	ft_printf("data->map_width: %d\n", data->map_width);
+	ft_printf("data->map_height: %d\n", data->map_height);
+	data->win = mlx_new_window(data->mlx, (data->map_width * PXS), \
+			(data->map_height * PXS), "7EVEN SWORDS");
+	data->img = mlx_new_image(data->mlx, (data->map_width * PXS), \
+			(data->map_height * PXS));
 	mlx_hook(data->win, 17, 1L << 0, (void *)exit, 0);
 	mlx_hook(data->win, 2, 0, ft_generate_actions, data);
 	mlx_key_hook(data->win, ft_clean_hook, data);

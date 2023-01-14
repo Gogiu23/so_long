@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pixel_push.c                                    :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 05:53:13 by gdominic          #+#    #+#             */
-/*   Updated: 2022/12/01 21:04:28 by gdominic         ###   ########.fr       */
+/*   Created: 2023/01/14 17:44:24 by gdominic          #+#    #+#             */
+/*   Updated: 2023/01/14 19:53:21 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include "../libft/includes/libft.h"
-#include "../mlx/mlx.h"
 
-void	ft_pixel_push(t_data *data, int x, int y, int color)
+void	ft_init_game(t_data *data)
 {
-	char	*width;
+	t_img	*init;
 
-	width = data->addr + (y * data->line_length + x * \
-			(data->bits_per_pixel / 8));
-	*(unsigned int *)width = color;
+	data->imgs = ft_calloc((sizeof (t_img) * 1), 1);
+	if (!data->imgs)
+		exit (EXIT_FAILURE);
+	init = data->imgs;
+	init->nc = 0;
+	init->sp = 0;
+	init->direction = 0;
+	init->velocity = 0;
+	init->deceleration = 0;
+	data->time = 0;
+	data->step = 0;
+	data->c = 0;
+	data->x = 0;
+	data->y = 0;
 }
+

@@ -179,7 +179,7 @@ ERR_STRUCT_MISSCHK	.mlx/mlx_png.c	32;"	d	file:
 ERR_STRUCT_MISSCHK	mlx/mlx_png.c	32;"	d	file:
 ERR_ZLIB	.mlx/mlx_png.c	33;"	d	file:
 ERR_ZLIB	mlx/mlx_png.c	33;"	d	file:
-ETX	includes/so_long.h	33;"	d
+ETX	includes/so_long.h	40;"	d
 F	04012023.vim	/^nnoremap <buffer> <silent> F :call nerdtree#ui_glue#invokeKeyMap("F")$/;"	m
 FONT_HEIGHT	.mlx/mlx_int.h	15;"	d
 FONT_WIDTH	.mlx/mlx_int.h	14;"	d
@@ -189,8 +189,9 @@ GREEN	Makefile	/^GREEN		=	\\033[0;32m$/;"	m
 GREEN	libft/Makefile	/^GREEN			=	\\033[0;32m$/;"	m
 GREEN	mlx/Makefile	/^GREEN=$'\\x1b[32m$/;"	m
 GREY	mlx/Makefile	/^GREY=$'\\x1b[30m$/;"	m
+GVX	includes/so_long.h	38;"	d
 H	04012023.vim	/^nnoremap H <Home>$/;"	m
-HTX	includes/so_long.h	32;"	d
+HTX	includes/so_long.h	39;"	d
 I	04012023.vim	/^nnoremap <buffer> <silent> I :call nerdtree#ui_glue#invokeKeyMap("I")$/;"	m
 INC	mlx/Makefile	/^INC=-I.$/;"	m
 INCLUDE_PATH	Makefile	/^INCLUDE_PATH	=.\/includes$/;"	m
@@ -198,6 +199,7 @@ INCLUDE_PATH	libft/Makefile	/^INCLUDE_PATH	= .\/includes$/;"	m
 INCLUDE_PATH_BONUS	Makefile	/^INCLUDE_PATH_BONUS	=.\/includes_bonus$/;"	m
 J	04012023.vim	/^nnoremap <buffer> <silent> J :call nerdtree#ui_glue#invokeKeyMap("J")$/;"	m
 J	04012023.vim	/^vnoremap J :m '>+1$/;"	m
+JMPX	includes/so_long.h	37;"	d
 K	04012023.vim	/^nnoremap <buffer> <silent> K :call nerdtree#ui_glue#invokeKeyMap("K")$/;"	m
 K	04012023.vim	/^vnoremap K :m '<-2$/;"	m
 L	04012023.vim	/^nnoremap L <End>$/;"	m
@@ -236,7 +238,7 @@ MLX_SYNC_WIN_CMD_COMPLETED	mlx/mlx.h	146;"	d
 MLX_SYNC_WIN_FLUSH_CMD	mlx/mlx.h	145;"	d
 MODULE_OBJ	mlx/Makefile	/^MODULE_OBJ=$(MODULE_SRC:.swift=.swiftmodule)$/;"	m
 MODULE_SRC	mlx/Makefile	/^MODULE_SRC= mlx_image.swift mlx_window.swift mlx_init.swift$/;"	m
-MVM	includes/so_long.h	31;"	d
+MVM	includes/so_long.h	36;"	d
 NAME	Makefile	/^NAME			= so_long $/;"	m
 NAME	libft/Makefile	/^NAME 			= libft.a$/;"	m
 NAME	mlx/Makefile	/^NAME=libmlx.dylib$/;"	m
@@ -261,7 +263,7 @@ PNG_MAGIC_SIZE	mlx/mlx_png.c	18;"	d	file:
 PURPLE	Makefile	/^PURPLE		=	\\033[0;35m$/;"	m
 PURPLE	libft/Makefile	/^PURPLE			=	\\033[0;35m$/;"	m
 PURPLE	mlx/Makefile	/^PURPLE=$'\\x1b[35m$/;"	m
-PXS	includes/so_long.h	30;"	d
+PXS	includes/so_long.h	35;"	d
 R	04012023.vim	/^nnoremap <buffer> <silent> R :call nerdtree#ui_glue#invokeKeyMap("R")$/;"	m
 RED	Makefile	/^RED	 		=	\\033[0;31m$/;"	m
 RED	libft/Makefile	/^RED				=	\\033[0;31m$/;"	m
@@ -283,8 +285,8 @@ UNIQ_BPP	mlx/mlx_png.c	16;"	d	file:
 WHITE	Makefile	/^WHITE		=	\\033[1;37m$/;"	m
 WHITE	libft/Makefile	/^WHITE			=	\\033[1;37m$/;"	m
 WHITE	mlx/Makefile	/^WHITE=$'\\x1b[37m$/;"	m
-WINDOW_HEIGHT	includes/so_long.h	28;"	d
-WINDOW_WIDTH	includes/so_long.h	27;"	d
+WINDOW_HEIGHT	includes/so_long.h	33;"	d
+WINDOW_WIDTH	includes/so_long.h	32;"	d
 X	04012023.vim	/^nnoremap <buffer> <silent> X :call nerdtree#ui_glue#invokeKeyMap("X")$/;"	m
 X_FLAGS	Makefile	/^X_FLAGS			= -Lmlx -lmlx -framework OpenGL -framework AppKit$/;"	m
 YELLOW	Makefile	/^YELLOW		=	\\033[1;33m$/;"	m
@@ -310,10 +312,8 @@ Z_CHUNK	mlx/mlx_png.c	22;"	d	file:
 \t	04012023.vim	/^nnoremap \\t :FloatermToggle$/;"	m
 ]	04012023.vim	/^nnoremap ] :call TheNext()$/;"	m
 acm	includes/so_long.h	/^	int		acm[3];$/;"	m	struct:s_img
-addr	includes/so_long.h	/^	char	*addr;$/;"	m	struct:s_data
 addr	includes/so_long.h	/^	char	*addr;$/;"	m	struct:s_img
 appid	.mlx/mlx_int.h	/^  void			*appid;$/;"	m	struct:mlx_ptr_s
-bits_per_pixel	includes/so_long.h	/^	int		bits_per_pixel;$/;"	m	struct:s_data
 bl	includes/so_long.h	/^	int		bl[2];$/;"	m	struct:s_img
 bpp	.mlx/mlx_png.c	/^  int		bpp;$/;"	m	struct:png_info_s	file:
 bpp	mlx/mlx_png.c	/^  int		bpp;$/;"	m	struct:png_info_s	file:
@@ -335,12 +335,12 @@ content	libft/includes/libft_list.h	/^	void			*content;$/;"	m	struct:s_list
 counter_words	libft/sources/strings/ft_split.c	/^static	size_t	counter_words(const char *str, char c)$/;"	f	file:
 crc_table	.mlx/mlx_png.c	/^unsigned long crc_table[256] = { 0, 0x77073096, 0xee0e612c, 0x990951ba, 0x76dc419, 0x706af48f, 0xe963a535, 0x9e6495a3, 0xedb8832, 0x79dcb8a4, 0xe0d5e91e, 0x97d2d988, 0x9b64c2b, 0x7eb17cbd, 0xe7b82d07, 0x90bf1d91, 0x1db71064, 0x6ab020f2, 0xf3b97148, 0x84be41de, 0x1adad47d, 0x6ddde4eb, 0xf4d4b551, 0x83d385c7, 0x136c9856, 0x646ba8c0, 0xfd62f97a, 0x8a65c9ec, 0x14015c4f, 0x63066cd9, 0xfa0f3d63, 0x8d080df5, 0x3b6e20c8, 0x4c69105e, 0xd56041e4, 0xa2677172, 0x3c03e4d1, 0x4b04d447, 0xd20d85fd, 0xa50ab56b, 0x35b5a8fa, 0x42b2986c, 0xdbbbc9d6, 0xacbcf940, 0x32d86ce3, 0x45df5c75, 0xdcd60dcf, 0xabd13d59, 0x26d930ac, 0x51de003a, 0xc8d75180, 0xbfd06116, 0x21b4f4b5, 0x56b3c423, 0xcfba9599, 0xb8bda50f, 0x2802b89e, 0x5f058808, 0xc60cd9b2, 0xb10be924, 0x2f6f7c87, 0x58684c11, 0xc1611dab, 0xb6662d3d, 0x76dc4190, 0x1db7106, 0x98d220bc, 0xefd5102a, 0x71b18589, 0x6b6b51f, 0x9fbfe4a5, 0xe8b8d433, 0x7807c9a2, 0xf00f934, 0x9609a88e, 0xe10e9818, 0x7f6a0dbb, 0x86d3d2d, 0x91646c97, 0xe6635c01, 0x6b6b51f4, 0x1c6c6162, 0x856530d8, 0xf262004e, 0x6c0695ed, 0x1b01a57b, 0x8208f4c1, 0xf50fc457, 0x65b0d9c6, 0x12b7e950, 0x8bbeb8ea, 0xfcb9887c, 0x62dd1ddf, 0x15da2d49, 0x8cd37cf3, 0xfbd44c65, 0x4db26158, 0x3ab551ce, 0xa3bc0074, 0xd4bb30e2, 0x4adfa541, 0x3dd895d7, 0xa4d1c46d, 0xd3d6f4fb, 0x4369e96a, 0x346ed9fc, 0xad678846, 0xda60b8d0, 0x44042d73, 0x33031de5, 0xaa0a4c5f, 0xdd0d7cc9, 0x5005713c, 0x270241aa, 0xbe0b1010, 0xc90c2086, 0x5768b525, 0x206f85b3, 0xb966d409, 0xce61e49f, 0x5edef90e, 0x29d9c998, 0xb0d09822, 0xc7d7a8b4, 0x59b33d17, 0x2eb40d81, 0xb7bd5c3b, 0xc0ba6cad, 0xedb88320, 0x9abfb3b6, 0x3b6e20c, 0x74b1d29a, 0xead54739, 0x9dd277af, 0x4db2615, 0x73dc1683, 0xe3630b12, 0x94643b84, 0xd6d6a3e, 0x7a6a5aa8, 0xe40ecf0b, 0x9309ff9d, 0xa00ae27, 0x7d079eb1, 0xf00f9344, 0x8708a3d2, 0x1e01f268, 0x6906c2fe, 0xf762575d, 0x806567cb, 0x196c3671, 0x6e6b06e7, 0xfed41b76, 0x89d32be0, 0x10da7a5a, 0x67dd4acc, 0xf9b9df6f, 0x8ebeeff9, 0x17b7be43, 0x60b08ed5, 0xd6d6a3e8, 0xa1d1937e, 0x38d8c2c4, 0x4fdff252, 0xd1bb67f1, 0xa6bc5767, 0x3fb506dd, 0x48b2364b, 0xd80d2bda, 0xaf0a1b4c, 0x36034af6, 0x41047a60, 0xdf60efc3, 0xa867df55, 0x316e8eef, 0x4669be79, 0xcb61b38c, 0xbc66831a, 0x256fd2a0, 0x5268e236, 0xcc0c7795, 0xbb0b4703, 0x220216b9, 0x5505262f, 0xc5ba3bbe, 0xb2bd0b28, 0x2bb45a92, 0x5cb36a04, 0xc2d7ffa7, 0xb5d0cf31, 0x2cd99e8b, 0x5bdeae1d, 0x9b64c2b0, 0xec63f226, 0x756aa39c, 0x26d930a, 0x9c0906a9, 0xeb0e363f, 0x72076785, 0x5005713, 0x95bf4a82, 0xe2b87a14, 0x7bb12bae, 0xcb61b38, 0x92d28e9b, 0xe5d5be0d, 0x7cdcefb7, 0xbdbdf21, 0x86d3d2d4, 0xf1d4e242, 0x68ddb3f8, 0x1fda836e, 0x81be16cd, 0xf6b9265b, 0x6fb077e1, 0x18b74777, 0x88085ae6, 0xff0f6a70, 0x66063bca, 0x11010b5c, 0x8f659eff, 0xf862ae69, 0x616bffd3, 0x166ccf45, 0xa00ae278, 0xd70dd2ee, 0x4e048354, 0x3903b3c2, 0xa7672661, 0xd06016f7, 0x4969474d, 0x3e6e77db, 0xaed16a4a, 0xd9d65adc, 0x40df0b66, 0x37d83bf0, 0xa9bcae53, 0xdebb9ec5, 0x47b2cf7f, 0x30b5ffe9, 0xbdbdf21c, 0xcabac28a, 0x53b39330, 0x24b4a3a6, 0xbad03605, 0xcdd70693, 0x54de5729, 0x23d967bf, 0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94, 0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d };$/;"	v
 crc_table	mlx/mlx_png.c	/^unsigned long crc_table[256] = { 0, 0x77073096, 0xee0e612c, 0x990951ba, 0x76dc419, 0x706af48f, 0xe963a535, 0x9e6495a3, 0xedb8832, 0x79dcb8a4, 0xe0d5e91e, 0x97d2d988, 0x9b64c2b, 0x7eb17cbd, 0xe7b82d07, 0x90bf1d91, 0x1db71064, 0x6ab020f2, 0xf3b97148, 0x84be41de, 0x1adad47d, 0x6ddde4eb, 0xf4d4b551, 0x83d385c7, 0x136c9856, 0x646ba8c0, 0xfd62f97a, 0x8a65c9ec, 0x14015c4f, 0x63066cd9, 0xfa0f3d63, 0x8d080df5, 0x3b6e20c8, 0x4c69105e, 0xd56041e4, 0xa2677172, 0x3c03e4d1, 0x4b04d447, 0xd20d85fd, 0xa50ab56b, 0x35b5a8fa, 0x42b2986c, 0xdbbbc9d6, 0xacbcf940, 0x32d86ce3, 0x45df5c75, 0xdcd60dcf, 0xabd13d59, 0x26d930ac, 0x51de003a, 0xc8d75180, 0xbfd06116, 0x21b4f4b5, 0x56b3c423, 0xcfba9599, 0xb8bda50f, 0x2802b89e, 0x5f058808, 0xc60cd9b2, 0xb10be924, 0x2f6f7c87, 0x58684c11, 0xc1611dab, 0xb6662d3d, 0x76dc4190, 0x1db7106, 0x98d220bc, 0xefd5102a, 0x71b18589, 0x6b6b51f, 0x9fbfe4a5, 0xe8b8d433, 0x7807c9a2, 0xf00f934, 0x9609a88e, 0xe10e9818, 0x7f6a0dbb, 0x86d3d2d, 0x91646c97, 0xe6635c01, 0x6b6b51f4, 0x1c6c6162, 0x856530d8, 0xf262004e, 0x6c0695ed, 0x1b01a57b, 0x8208f4c1, 0xf50fc457, 0x65b0d9c6, 0x12b7e950, 0x8bbeb8ea, 0xfcb9887c, 0x62dd1ddf, 0x15da2d49, 0x8cd37cf3, 0xfbd44c65, 0x4db26158, 0x3ab551ce, 0xa3bc0074, 0xd4bb30e2, 0x4adfa541, 0x3dd895d7, 0xa4d1c46d, 0xd3d6f4fb, 0x4369e96a, 0x346ed9fc, 0xad678846, 0xda60b8d0, 0x44042d73, 0x33031de5, 0xaa0a4c5f, 0xdd0d7cc9, 0x5005713c, 0x270241aa, 0xbe0b1010, 0xc90c2086, 0x5768b525, 0x206f85b3, 0xb966d409, 0xce61e49f, 0x5edef90e, 0x29d9c998, 0xb0d09822, 0xc7d7a8b4, 0x59b33d17, 0x2eb40d81, 0xb7bd5c3b, 0xc0ba6cad, 0xedb88320, 0x9abfb3b6, 0x3b6e20c, 0x74b1d29a, 0xead54739, 0x9dd277af, 0x4db2615, 0x73dc1683, 0xe3630b12, 0x94643b84, 0xd6d6a3e, 0x7a6a5aa8, 0xe40ecf0b, 0x9309ff9d, 0xa00ae27, 0x7d079eb1, 0xf00f9344, 0x8708a3d2, 0x1e01f268, 0x6906c2fe, 0xf762575d, 0x806567cb, 0x196c3671, 0x6e6b06e7, 0xfed41b76, 0x89d32be0, 0x10da7a5a, 0x67dd4acc, 0xf9b9df6f, 0x8ebeeff9, 0x17b7be43, 0x60b08ed5, 0xd6d6a3e8, 0xa1d1937e, 0x38d8c2c4, 0x4fdff252, 0xd1bb67f1, 0xa6bc5767, 0x3fb506dd, 0x48b2364b, 0xd80d2bda, 0xaf0a1b4c, 0x36034af6, 0x41047a60, 0xdf60efc3, 0xa867df55, 0x316e8eef, 0x4669be79, 0xcb61b38c, 0xbc66831a, 0x256fd2a0, 0x5268e236, 0xcc0c7795, 0xbb0b4703, 0x220216b9, 0x5505262f, 0xc5ba3bbe, 0xb2bd0b28, 0x2bb45a92, 0x5cb36a04, 0xc2d7ffa7, 0xb5d0cf31, 0x2cd99e8b, 0x5bdeae1d, 0x9b64c2b0, 0xec63f226, 0x756aa39c, 0x26d930a, 0x9c0906a9, 0xeb0e363f, 0x72076785, 0x5005713, 0x95bf4a82, 0xe2b87a14, 0x7bb12bae, 0xcb61b38, 0x92d28e9b, 0xe5d5be0d, 0x7cdcefb7, 0xbdbdf21, 0x86d3d2d4, 0xf1d4e242, 0x68ddb3f8, 0x1fda836e, 0x81be16cd, 0xf6b9265b, 0x6fb077e1, 0x18b74777, 0x88085ae6, 0xff0f6a70, 0x66063bca, 0x11010b5c, 0x8f659eff, 0xf862ae69, 0x616bffd3, 0x166ccf45, 0xa00ae278, 0xd70dd2ee, 0x4e048354, 0x3903b3c2, 0xa7672661, 0xd06016f7, 0x4969474d, 0x3e6e77db, 0xaed16a4a, 0xd9d65adc, 0x40df0b66, 0x37d83bf0, 0xa9bcae53, 0xdebb9ec5, 0x47b2cf7f, 0x30b5ffe9, 0xbdbdf21c, 0xcabac28a, 0x53b39330, 0x24b4a3a6, 0xbad03605, 0xcdd70693, 0x54de5729, 0x23d967bf, 0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94, 0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d };$/;"	v
+deceleration	includes/so_long.h	/^	int		deceleration;$/;"	m	struct:s_img
 depth	.mlx/mlx_png.c	/^  int		depth;$/;"	m	struct:png_info_s	file:
 depth	mlx/mlx_png.c	/^  int		depth;$/;"	m	struct:png_info_s	file:
 direction	includes/so_long.h	/^	int		direction;$/;"	m	struct:s_img
 display_log	.mlx/mlx_shaders.c	/^void display_log(GLuint object, void (*param_func)(), void (*getlog_func)())$/;"	f
 e	04012023.vim	/^nnoremap <buffer> <silent> e :call nerdtree#ui_glue#invokeKeyMap("e")$/;"	m
-endian	includes/so_long.h	/^	int		endian;$/;"	m	struct:s_data
 ext_img	includes/so_long.h	/^	void	*ext_img[3];$/;"	m	struct:s_data
 f	04012023.vim	/^nnoremap <buffer> <silent> f :call nerdtree#ui_glue#invokeKeyMap("f")$/;"	m
 font	.mlx/mlx_int.h	/^  mlx_img_list_t	*font;$/;"	m	struct:mlx_ptr_s
@@ -359,21 +359,28 @@ ft_calloc	libft/sources/mem_edit/ft_calloc.c	/^void	*ft_calloc(size_t count, siz
 ft_check_arg_atoi	libft/sources/converts/ft_atoi_plus.c	/^void	ft_check_arg_atoi(const char *str, int i)$/;"	f
 ft_check_errors	sources/ft_check_errors.c	/^void	ft_check_errors(t_data *data)$/;"	f
 ft_check_size_map	sources/ft_check_errors.c	/^void	ft_check_size_map(t_data *data)$/;"	f
+ft_clean_hook	sources/ft_central_game.c	/^int	ft_clean_hook(int keycode, t_data *data)$/;"	f
 ft_convertx	libft/sources/converts/ft_convertx.c	/^int	ft_convertx(unsigned int num, int base, int mode)$/;"	f
 ft_countnbr	libft/sources/converts/ft_itoa.c	/^static	int	ft_countnbr(int n)$/;"	f	file:
 ft_doitoa	libft/sources/converts/ft_itoa.c	/^static	char	*ft_doitoa(int n, char *dest, int counter)$/;"	f	file:
 ft_domall	libft/sources/strings/ft_split.c	/^static char	**ft_domall(char *s, char c, char **dest)$/;"	f	file:
-ft_exit_game	sources/ft_central_game.c	/^int	ft_exit_game(int keycode, t_data *data)$/;"	f
+ft_down_collision	sources/ft_get_collision_player.c	/^int	ft_down_collision(t_data *data)$/;"	f
+ft_exit_game	sources/ft_get_action.c	/^int	ft_exit_game(int keycode, t_data *data)$/;"	f
 ft_final_sprite_loading	sources/ft_upload_images.c	/^static	void	ft_final_sprite_loading(int a, char *path, int ty_sprite, \\$/;"	f	file:
 ft_fitoar	sources/ft_fitoar.c	/^void	ft_fitoar(t_data *data, int fd)$/;"	f
 ft_free	libft/sources/strings/ft_split.c	/^static char	*ft_free(char *dest, char **supdest, int g)$/;"	f	file:
 ft_free_stacks_t	sources/ft_free_memory.c	/^void	ft_free_stacks_t(t_data *t)$/;"	f
+ft_generate_actions	sources/ft_central_game.c	/^int	ft_generate_actions(int keycode, t_data *data)$/;"	f
 ft_get_img	sources/ft_collectable.c	/^int	*ft_get_img(t_data *data)$/;"	f
 ft_get_pl	sources/player.c	/^int	*ft_get_pl(t_data *data)$/;"	f
 ft_get_player_dimension	sources/ft_player_dimension.c	/^void	ft_get_player_dimension(t_data *data)$/;"	f
 ft_get_player_position	sources/map.c	/^int	ft_get_player_position(t_data *data)$/;"	f
 ft_get_size_map	sources/ft_map_handler.c	/^void	ft_get_size_map(t_data *data, int fd, char **argv)$/;"	f
+ft_get_sprite_jump	sources/ft_get_sprite_player.c	/^int	ft_get_sprite_jump(t_data *data)$/;"	f
+ft_get_sprite_left	sources/ft_get_sprite_player.c	/^int	ft_get_sprite_left(t_data *data)$/;"	f
+ft_get_sprite_right	sources/ft_get_sprite_player.c	/^int	ft_get_sprite_right(t_data *data)$/;"	f
 ft_getlines	libft/sources/lines/get_next_line_bonus.c	/^char	*ft_getlines(char *ptr)$/;"	f
+ft_init_game	sources/ft_init.c	/^void	ft_init_game(t_data *data)$/;"	f
 ft_isalnum	libft/sources/checks/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
 ft_isalpha	libft/sources/checks/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f
 ft_isascii	libft/sources/checks/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f
@@ -400,7 +407,8 @@ ft_memset	libft/sources/mem_edit/ft_memset.c	/^void	*ft_memset(void *b, int c, s
 ft_newptr	libft/sources/lines/get_next_line_bonus.c	/^char	*ft_newptr(char *ptr)$/;"	f
 ft_next_game	sources/map.c	/^int	ft_next_game(int keycode, t_data *data)$/;"	f
 ft_path_to_sprite	sources/ft_upload_images.c	/^static	char	*ft_path_to_sprite(char *img_name, int n)$/;"	f	file:
-ft_pixel_push	sources/ft_pixel_push.c	/^void	ft_pixel_push(t_data *data, int x, int y, int color)$/;"	f
+ft_player_gravity	sources/ft_player_movement.c	/^void	ft_player_gravity(t_data *data)$/;"	f
+ft_player_jump	sources/ft_player_movement.c	/^void	ft_player_jump(t_data *data)$/;"	f
 ft_player_move_horitzontal	sources/ft_player_movement.c	/^void	ft_player_move_horitzontal(t_data *data)$/;"	f
 ft_print_background	sources/ft_print_map.c	/^void	ft_print_background(t_data *data)$/;"	f
 ft_print_collectable	sources/ft_collectable.c	/^void	ft_print_collectable(t_data *data)$/;"	f
@@ -425,6 +433,7 @@ ft_putstr_fd	libft/sources/puts/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int 
 ft_read_line	libft/sources/lines/get_next_line_bonus.c	/^char	*ft_read_line(char *ptr, int fd)$/;"	f
 ft_realconvert	libft/sources/converts/ft_convertx.c	/^static int	ft_realconvert(char *buffer, int i)$/;"	f	file:
 ft_realptr	libft/sources/converts/ft_ptr.c	/^static int	ft_realptr(char *newbuff, int i)$/;"	f	file:
+ft_reset_action	sources/ft_get_action.c	/^void	ft_reset_action(int keycode, t_data *data)$/;"	f
 ft_return_action	sources/ft_get_action.c	/^int	ft_return_action(int keycode)$/;"	f
 ft_right_collision	sources/ft_get_collision_player.c	/^int	ft_right_collision(t_data *data)$/;"	f
 ft_search_item	sources/ft_collectable.c	/^static	void	ft_search_item(t_data *data)$/;"	f	file:
@@ -446,6 +455,7 @@ ft_strrchr	libft/sources/strings/ft_strrchr.c	/^char	*ft_strrchr(const char *s, 
 ft_strtrim	libft/sources/strings/ft_strtrim.c	/^char	*ft_strtrim(char *s1, char *set)$/;"	f
 ft_substr	libft/sources/strings/ft_substr.c	/^char	*ft_substr(char *s, unsigned int start, unsigned int len)$/;"	f
 ft_tolower	libft/sources/converts/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
+ft_top_collision	sources/ft_get_collision_player.c	/^int	ft_top_collision(t_data *data)$/;"	f
 ft_toupper	libft/sources/converts/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
 ft_wait_time	sources/map.c	/^int	ft_wait_time(t_data *data)$/;"	f
 func_t	.mlx/mlx_int.h	/^typedef int (*func_t)();$/;"	t
@@ -479,7 +489,7 @@ imgs	includes/so_long.h	/^	t_img	*imgs;$/;"	m	struct:s_data
 interlace	.mlx/mlx_png.c	/^  int		interlace;$/;"	m	struct:png_info_s	file:
 interlace	mlx/mlx_png.c	/^  int		interlace;$/;"	m	struct:png_info_s	file:
 jk	04012023.vim	/^inoremap jk $/;"	m
-line_length	includes/so_long.h	/^	int		line_length;$/;"	m	struct:s_data
+jumping	includes/so_long.h	/^	int		jumping;$/;"	m	struct:s_img
 loc_font_atlassize	.mlx/mlx_int.h	/^  GLint		loc_font_atlassize;$/;"	m	struct:glsl_info_s
 loc_font_color	.mlx/mlx_int.h	/^  GLint		loc_font_color;$/;"	m	struct:glsl_info_s
 loc_font_posinatlas	.mlx/mlx_int.h	/^  GLint		loc_font_posinatlas;$/;"	m	struct:glsl_info_s
@@ -587,6 +597,7 @@ name	.mlx/mlx_xpm.c	/^  int           name;$/;"	m	struct:s_xpm_col	file:
 name	mlx/mlx_xpm.c	/^  char  *name;$/;"	m	struct:s_col_name	file:
 name	mlx/mlx_xpm.c	/^  int           name;$/;"	m	struct:s_xpm_col	file:
 nb_flush	.mlx/mlx_int.h	/^  int			nb_flush;$/;"	m	struct:mlx_win_list_s
+nc	includes/so_long.h	/^	int		nc;$/;"	m	struct:s_img
 next	.mlx/mlx_int.h	/^  struct mlx_img_ctx_s	*next;$/;"	m	struct:mlx_img_ctx_s	typeref:struct:mlx_img_ctx_s::mlx_img_ctx_s
 next	.mlx/mlx_int.h	/^  struct mlx_img_list_s	*next;$/;"	m	struct:mlx_img_list_s	typeref:struct:mlx_img_list_s::mlx_img_list_s
 next	.mlx/mlx_int.h	/^  struct mlx_win_list_s	*next;$/;"	m	struct:mlx_win_list_s	typeref:struct:mlx_win_list_s::mlx_win_list_s
@@ -601,7 +612,7 @@ pixel_program	.mlx/mlx_int.h	/^  GLuint	pixel_program;$/;"	m	struct:glsl_info_s
 pixel_vshader	.mlx/mlx_int.h	/^  GLuint	pixel_vshader;$/;"	m	struct:glsl_info_s
 pixmgt	.mlx/mlx_int.h	/^  int			pixmgt;$/;"	m	struct:mlx_win_list_s
 pl	includes/so_long.h	/^	int		pl[2];$/;"	m	struct:s_img
-pl_img	includes/so_long.h	/^	void	*pl_img[17];$/;"	m	struct:s_data
+pl_img	includes/so_long.h	/^	void	*pl_img[34];$/;"	m	struct:s_data
 png_info_s	.mlx/mlx_png.c	/^typedef struct png_info_s$/;"	s	file:
 png_info_s	mlx/mlx_png.c	/^typedef struct png_info_s$/;"	s	file:
 png_info_t	.mlx/mlx_png.c	/^} png_info_t;$/;"	t	typeref:struct:png_info_s	file:
@@ -632,6 +643,7 @@ s_img	includes/so_long.h	/^typedef struct	s_img {$/;"	s
 s_list	libft/includes/libft_list.h	/^typedef struct s_list$/;"	s
 s_xpm_col	.mlx/mlx_xpm.c	/^typedef struct  s_xpm_col$/;"	s	file:
 s_xpm_col	mlx/mlx_xpm.c	/^typedef struct  s_xpm_col$/;"	s	file:
+sp	includes/so_long.h	/^	int		sp;$/;"	m	struct:s_img
 src_lenght	libft/sources/strings/ft_strlcpy.c	/^static size_t	src_lenght(const char *src)$/;"	f	file:
 step	includes/so_long.h	/^	int		step;$/;"	m	struct:s_data
 t	04012023.vim	/^nnoremap <buffer> <silent> t :call nerdtree#ui_glue#invokeKeyMap("t")$/;"	m
@@ -646,6 +658,7 @@ tl	includes/so_long.h	/^	int		tl[2];$/;"	m	struct:s_img
 tr	includes/so_long.h	/^	int		tr[2];$/;"	m	struct:s_img
 u	04012023.vim	/^nnoremap <buffer> <silent> u :call nerdtree#ui_glue#invokeKeyMap("u")$/;"	m
 vbuffer	.mlx/mlx_int.h	/^  GLuint		vbuffer;$/;"	m	struct:mlx_img_ctx_s
+velocity	includes/so_long.h	/^	int		velocity;$/;"	m	struct:s_img
 vertexes	.mlx/mlx_int.h	/^  GLfloat		vertexes[8];$/;"	m	struct:mlx_img_list_s
 width	.mlx/font.c	/^  unsigned int 	 width;$/;"	m	struct:__anon1	file:
 width	.mlx/mlx_int.h	/^  int			width;$/;"	m	struct:mlx_img_list_s

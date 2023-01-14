@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/12 10:19:47 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 17:55:44 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@
 
 # define PXS 50
 # define MVM 8
-# define JMPX 33
-# define GVX 4
+# define JMPX 30
+# define GVX 3
 # define HTX 15
 # define ETX 25
 
@@ -46,6 +46,7 @@
  * bl = below left	[1] = x	[2] = y;
  * direction -> 0 = LEFT	1 = RIGHT
  * sp = sprite number
+ * nc = number collectable
  */
 typedef struct	s_img {
 	void	*img;
@@ -58,9 +59,11 @@ typedef struct	s_img {
 	int		bl[2];
 	int		acm[3];
 	int		sp;
+	int		nc;
 	int		direction;
 	int		jumping;
 	int		velocity;
+	int		deceleration;
 }	t_img;
 
 /*
@@ -77,16 +80,12 @@ typedef struct s_data {
 	void	*mlx;
 	void	*img;
 	void	*win;
-	char	*addr;
 	char	*map;
 	int		map_height;// altura of the map //
 	int		map_width;// anchura del mapa //
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
 	char	**matrix;
 	char	*pic;
-	void	*pl_img[32];
+	void	*pl_img[34];
 	void	*gr_img[2];
 	void	*wll_img[2];
 	void	*ext_img[3];
@@ -102,7 +101,8 @@ typedef struct s_data {
 	t_img	*imgs;
 }	t_data;
 	
-
+//INITIATION OF THE GAME
+void	ft_init_game(t_data *data);
 void	ft_pixel_push(t_data *data, int x, int y, int color);
 
 // Function in order to get the size of the map //
@@ -137,6 +137,7 @@ void	ft_print_player(t_data *data);
 void	ft_put_img(t_data *data, void *img, int a, int b);
 int		ft_get_sprite_left(t_data *data);
 int		ft_get_sprite_right(t_data *data);
+int		ft_get_sprite_jump(t_data *data);
 
 //FUNCTION LOADING IMAGES
 void	ft_load_images(t_data *data);
@@ -160,9 +161,6 @@ int		ft_clean_hook(int keycode, t_data *data);
 void	ft_player_jump(t_data *data);
 void	ft_player_gravity(t_data *data);
 void	ft_player_move_horitzontal(t_data *data);
-
-void	ft_move_right(t_data *data);
-void	ft_move_right2(t_data *data);
 
 //RECORDING ACTIONS
 int		ft_generate_actions(int keycode, t_data *data);

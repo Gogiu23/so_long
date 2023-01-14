@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:09:41 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/10 14:59:22 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/14 17:41:08 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,24 @@ int	*ft_get_img(t_data *data)
 		nr = 0;
 	return (data->cll_img[nr]);
 }
+
 static	void	ft_search_item(t_data *data)
 {
-	int	a;
-	int	b;
+	int		a;
+	int		b;
+	t_img	*item;
 
 	a = 0;
+	item = data->imgs;
 	while (data->matrix[a])
 	{
 		b = 0;
 		while (data->matrix[a][b])
 		{
 			if (data->matrix[a][b] == 'C')
-				ft_put_img(data, ft_get_img(data), b * 50, a * 50);
+				ft_put_img(data, ft_get_img(data), b * PXS, a * PXS);
 			b++;
+			item->nc++;
 		}
 		a++;
 	}
@@ -45,5 +49,5 @@ static	void	ft_search_item(t_data *data)
 void	ft_print_collectable(t_data *data)
 {
 	ft_search_item(data);
-	usleep(50000);
+	usleep(30000);
 }
