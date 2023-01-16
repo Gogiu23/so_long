@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/14 17:55:44 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:58:36 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,8 @@ int		ft_get_player_position(t_data *data);
 
 // FUnctions check errors //
 void	ft_check_errors(t_data *data);
-void	ft_check_size_map(t_data *data);
+int		ft_check_size_map(t_data *data);
+int		ft_check_fd(t_data *data);
 
 // Function create doble array in order to store the map //
 void	ft_fitoar(t_data *t, int fd);
