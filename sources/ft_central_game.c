@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:05:32 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/31 18:54:59 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/31 21:38:54 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ int	ft_clean_hook(int keycode, t_data *data)
 
 int	ft_print_env(t_data *data)
 {
-	mlx_clear_window(data->mlx, data->win);
-	ft_get_player_dimension(data);
-	ft_print_wall(data);
+//	mlx_clear_window(data->mlx, data->win);
 	ft_print_background(data);
+//	usleep(1000);
+	ft_get_player_dimension(data);
+//	ft_print_wall(data);
 	ft_print_exit(data);
 	ft_print_collectable(data);
 	ft_print_player(data);
@@ -50,10 +51,13 @@ void	ft_after_loading(t_data *data)
 	ft_load_images(data);
 	ft_printf("data->map_width: %d\n", data->map_width);
 	ft_printf("data->map_height: %d\n", data->map_height);
-	data->win = mlx_new_window(data->mlx, (data->map_width * PXS - 1), \
-			(data->map_height * PXS - 1), "7EVEN SWORDS");
-	data->img = mlx_new_image(data->mlx, (data->map_width * PXS - 1), \
-			(data->map_height * PXS - 1));
+	data->win = mlx_new_window(data->mlx, (data->map_width * PXS), \
+			(data->map_height * PXS), "7EVEN SWORDS");
+	data->img = mlx_new_image(data->mlx, (data->map_width * PXS), \
+			(data->map_height * PXS));
+	ft_print_background_init(data);
+	ft_print_wall(data);
+	ft_print_exit(data);
 	mlx_hook(data->win, 17, 1L << 0, (void *)exit, 0);
 	mlx_hook(data->win, 2, 0, ft_generate_actions, data);
 	mlx_key_hook(data->win, ft_clean_hook, data);

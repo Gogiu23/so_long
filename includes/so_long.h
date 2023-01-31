@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/31 18:31:01 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/31 21:19:43 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define WINDOW_WIDTH 1325
 # define WINDOW_HEIGHT 600
 
-# define PXS 50
+# define PXS 49
 # define MVM 8
 # define JMPX 30
 # define GVX 3
@@ -131,6 +131,7 @@ void	ft_after_loading(t_data *data);
 int		ft_print_env(t_data *data);
 void	ft_print_wall(t_data *data);
 void	ft_print_background(t_data *data);
+void	ft_print_background_init(t_data *data);
 void	ft_print_exit(t_data *data);
 void	ft_print_collectable(t_data *data);
 void	ft_print_player(t_data *data);
