@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:16:07 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/14 15:40:09 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:49:24 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_player_jump(t_data *data)
 	{
 		jump->pl[1] -= ft_top_collision(data);
 		jump->jumping--;
-		usleep(6000);
+//		usleep(6000);
 	}
 }
 

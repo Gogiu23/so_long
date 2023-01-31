@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:58:33 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/14 15:46:22 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:40:25 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ static	void	ft_final_sprite_loading(int a, char *path, int ty_sprite, \
 	if (ty_sprite == 1)
 		data->cll_img[a - 1] = mlx_png_file_to_image(data->mlx, path, &size, \
 				&size);
-//	exit (0);
 	else if (ty_sprite == 2)
 		data->pl_img[a - 1] = mlx_png_file_to_image(data->mlx, path, &size, \
 				&size);

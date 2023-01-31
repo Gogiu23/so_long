@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:09:41 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/14 17:41:08 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:47:13 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ static	void	ft_search_item(t_data *data)
 void	ft_print_collectable(t_data *data)
 {
 	ft_search_item(data);
-	usleep(30000);
+//	usleep(30000);
 }

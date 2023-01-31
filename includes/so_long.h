@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/16 11:58:36 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:31:01 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ typedef struct s_data {
 	void	*img;
 	void	*win;
 	char	*map;
+	char	**map_2;
 	int		map_height;// altura of the map //
 	int		map_width;// anchura del mapa //
 	char	**matrix;

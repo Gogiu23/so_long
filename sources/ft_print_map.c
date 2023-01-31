@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:57:25 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/10 18:07:26 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:56:27 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ft_print_background(t_data *data)
 		b = 0;
 		while (data->matrix[a][b])
 		{
+			ft_printf("data->matrix[%d][%d]: %c\n", a, b, data->matrix[a][b]);
 			if (data->matrix[a][b] == '0' || data->matrix[a][b] == 'P' \
 					|| data->matrix[a][b] == 'C' || data->matrix[a][b] == 'E')
 				ft_put_img(data, data->gr_img[0], b * PXS, a * PXS);
