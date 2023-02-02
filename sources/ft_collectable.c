@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:09:41 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/31 21:56:28 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/02/02 18:17:25 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,11 @@ static	void	ft_search_item(t_data *data)
 		while (data->matrix[a][b])
 		{
 			if (data->matrix[a][b] == 'C')
-			{
 				ft_put_img(data, ft_get_img(data), b * PXS, a * PXS);
-				item->nc++;
-			}
 			b++;
 		}
 		a++;
 	}
-	printf("nc: %d\n", item->nc);
 }
 
 void	ft_print_collectable(t_data *data)

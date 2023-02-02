@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:50:57 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/31 21:19:43 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/02/02 18:08:46 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@
  * direction -> 0 = LEFT	1 = RIGHT
  * sp = sprite number
  * nc = number collectable
+ * np = number player;
+ * ne = number exit;
  */
 typedef struct	s_img {
 	void	*img;
@@ -60,6 +62,8 @@ typedef struct	s_img {
 	int		acm[3];
 	int		sp;
 	int		nc;
+	int		np;
+	int		ne;
 	int		direction;
 	int		jumping;
 	int		velocity;
@@ -170,5 +174,7 @@ int		ft_generate_actions(int keycode, t_data *data);
 int		ft_return_action(int keycode);
 void	ft_call_action(int keycode, t_data *data);
 void	ft_reset_action(int keycode, t_data *data);
+void	ft_count_chars(t_data *data);
+int		ft_check_char(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:44:24 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/14 19:53:21 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/02/02 18:15:39 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_init_game(t_data *data)
 		exit (EXIT_FAILURE);
 	init = data->imgs;
 	init->nc = 0;
+	init->np = 0;
+	init->ne = 0;
 	init->sp = 0;
 	init->direction = 0;
 	init->velocity = 0;
@@ -33,3 +35,25 @@ void	ft_init_game(t_data *data)
 	data->y = 0;
 }
 
+void	ft_count_chars(t_data *data)
+{
+	int	a;
+	int	b;
+
+	a = 0;
+	while (data->matrix[a])
+	{
+		b = 0;
+		while (data->matrix[a][b])
+		{
+			if (data->matrix[a][b] == 'C')
+				data->imgs->nc++;
+			if (data->matrix[a][b] == 'E')
+				data->imgs->ne++;
+			if (data->matrix[a][b] == 'P')
+				data->imgs->np++;
+			b++;
+		}
+		a++;
+	}
+}

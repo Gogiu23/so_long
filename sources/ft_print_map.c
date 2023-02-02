@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:57:25 by gdominic          #+#    #+#             */
-/*   Updated: 2023/01/31 21:42:55 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:43:57 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	ft_print_background(t_data *data)
 			if (data->matrix[a][b] == 'P' || data->matrix[a][b] == 'C' \
 					|| data->matrix[a][b] == 'E' || data->matrix[a][b] == '0')
 				ft_put_img(data, data->gr_img[0], b * PXS, a * PXS);
+			else
+				ft_put_img(data, data->wll_img[0], b * PXS, a * PXS);
 			b++;
 		}
 		a++;
