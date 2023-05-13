@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 02:49:27 by gdominic          #+#    #+#             */
-/*   Updated: 2023/02/02 18:15:58 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/04/23 06:41:50 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	ft_check_errors(t_data *data)
 int	ft_check_size_map(t_data *data)
 {
 	int	a;
-	int	b;
+//	int	b;
 
 	a = 0;
-	b = 0;
+//	b = 0;
 	while (data->matrix[a])
 	{
 		ft_printf("data->matrix[%d]: %s\n", a, data->matrix[a]);

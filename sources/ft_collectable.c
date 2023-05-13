@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 19:09:41 by gdominic          #+#    #+#             */
-/*   Updated: 2023/02/02 18:17:25 by gdominic         ###   ########.fr       */
+/*   Updated: 2023/04/23 06:42:36 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static	void	ft_search_item(t_data *data)
 {
 	int		a;
 	int		b;
-	t_img	*item;
+//	t_img	*item;
 
 	a = 0;
-	item = data->imgs;
+//	item = data->imgs;
 	while (data->matrix[a])
 	{
 		b = 0;
